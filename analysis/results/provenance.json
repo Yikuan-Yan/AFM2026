@@ -1,0 +1,222 @@
+{
+  "algorithm": {
+    "contact_height_channel": "measuredHeight",
+    "contact_segment": "approach",
+    "contact_span_nm": 50.0,
+    "explicitly_unused_for_calibration": [
+      "fit-data column",
+      "exported parameter.f",
+      "exported parameter.Q",
+      "exported parameter.A"
+    ],
+    "peak_prominence_decades": 0.8,
+    "peak_search_Hz": [
+      1000.0,
+      200000.0
+    ],
+    "peak_selection": "lowest significant PSD peak; exported/header peak unused",
+    "resonance_area": "pi/2 * A2 * Q * f0",
+    "sensitivity": "1/abs(dV/dz)",
+    "spring_constant": "mean(thermal_factor)/mean(sensitivity)^2",
+    "thermal_factor": "correction_factor * k_B * T / resonance_area",
+    "thermal_fit_half_width_Hz": 3000.0,
+    "thermal_fit_model": "N + A2/((1-(f/f0)^2)^2 + (f/(f0*Q))^2)",
+    "thermal_fit_objective": "Gamma/Whittle PSD negative log likelihood",
+    "thermal_input_columns": [
+      "Frequency",
+      "average measured PSD"
+    ]
+  },
+  "analysis_date": "2026-08-20",
+  "input_counts": {
+    "jpk_force": 15,
+    "photo": 1,
+    "tnd": 15
+  },
+  "label_sanity_check_only": {
+    "frequency_range_kHz": [
+      11.0,
+      17.0
+    ],
+    "length_um": 450.0,
+    "probe_label": "NANOSENSORS POINTPROBE CONT-W; handwritten tipless",
+    "spring_constant_range_N_per_m": [
+      0.11,
+      0.56
+    ],
+    "width_um": [
+      51.2,
+      54.0
+    ]
+  },
+  "runtime": {
+    "matplotlib": "3.10.1+dfsg1",
+    "numpy": "2.2.4",
+    "platform": "Linux-6.12.90+deb13.1-amd64-x86_64-with-glibc2.41",
+    "python": "3.13.5",
+    "scipy": "1.15.3"
+  },
+  "script": {
+    "path": "analysis/calibrate_cantilevers.py",
+    "sha256": "cf508e3bd7af5e8d06457a360fa2b6fa7ecb648e5b9dd7c103f15ad16de0956f"
+  },
+  "source_files": [
+    {
+      "bytes": 2605674,
+      "path": "IMG_4571.jpeg",
+      "sha256": "2fd6f481835fc308f88550bdac058a9b198520db6cd49f6369a43b7cde0010c8"
+    },
+    {
+      "bytes": 36636,
+      "path": "calibration/1/force-save-2026.08.18-14.21.05.970.jpk-force",
+      "sha256": "f6e78defd532510a7d836ca6f307f5407d070516159adb9f7bfe751495d7c4ab"
+    },
+    {
+      "bytes": 36599,
+      "path": "calibration/1/force-save-2026.08.18-14.21.37.899.jpk-force",
+      "sha256": "4ba5e6da49f8bf48711b1e71486b8920b52dd5259a89aa87444061dba8399088"
+    },
+    {
+      "bytes": 36597,
+      "path": "calibration/1/force-save-2026.08.18-14.21.55.414.jpk-force",
+      "sha256": "e10c136675433333749d006297c7cec8e6f6e764d7f72f55a304bb1da2d9ec0e"
+    },
+    {
+      "bytes": 36635,
+      "path": "calibration/1/force-save-2026.08.18-14.22.02.827.jpk-force",
+      "sha256": "600677b0adf64030a0164388ee258b9ad532766dc06c6b3e7bbb66fbbae64600"
+    },
+    {
+      "bytes": 36577,
+      "path": "calibration/1/force-save-2026.08.18-14.22.09.135.jpk-force",
+      "sha256": "a829c261effb1e7bbe79b05102d5f36dff0132902815eb3f425eb7557bc3a92f"
+    },
+    {
+      "bytes": 2548491,
+      "path": "calibration/1/thermal-noise-data_vDeflection_2026.08.18-13.58.54.tnd",
+      "sha256": "7248aed77aa5a336044a23690d84374af6fe922b3d50c92eb1bf0459c5f54b04"
+    },
+    {
+      "bytes": 2548835,
+      "path": "calibration/1/thermal-noise-data_vDeflection_2026.08.18-14.00.14.tnd",
+      "sha256": "d3bb4620f43fd3ed6564a8695ff5c67b47cd2b83c372f0892e807b4a2ad286ba"
+    },
+    {
+      "bytes": 2548470,
+      "path": "calibration/1/thermal-noise-data_vDeflection_2026.08.18-14.00.43.tnd",
+      "sha256": "678085c9cf2768d8b5f16a6c8138a5dd6f0e806b9d55d091ef672f0838687c0c"
+    },
+    {
+      "bytes": 2552038,
+      "path": "calibration/1/thermal-noise-data_vDeflection_2026.08.18-14.01.15.tnd",
+      "sha256": "c0c00356a8bd2eb7e482de78d4d7e7210322ed4d71817764101da7ef9100be95"
+    },
+    {
+      "bytes": 2548199,
+      "path": "calibration/1/thermal-noise-data_vDeflection_2026.08.18-14.01.42.tnd",
+      "sha256": "26d307b7ac5ae369d330c2c2891ff127b30643194df65b557b9690c52f4bb9d8"
+    },
+    {
+      "bytes": 36823,
+      "path": "calibration/2/force-save-2026.08.18-14.51.55.973.jpk-force",
+      "sha256": "c1db39f264ad2f24d4addb08f550ee86d9baf7e77303eb6753dcb16f5ae8e498"
+    },
+    {
+      "bytes": 36550,
+      "path": "calibration/2/force-save-2026.08.18-14.52.13.954.jpk-force",
+      "sha256": "16894b537d121dcaf398aa42d8728114a0f8da5c23d1d9c7faa2c25f42d97719"
+    },
+    {
+      "bytes": 36624,
+      "path": "calibration/2/force-save-2026.08.18-14.52.23.098.jpk-force",
+      "sha256": "e80e9e77709535f1f008218da8be3adfd40b2139ba3987a2fc5359a7bd4c6153"
+    },
+    {
+      "bytes": 36698,
+      "path": "calibration/2/force-save-2026.08.18-14.52.38.099.jpk-force",
+      "sha256": "2e16556a437606251b3d16e52ee73372fe4e0dd7dd599ac3d9f82294608d2a0d"
+    },
+    {
+      "bytes": 36700,
+      "path": "calibration/2/force-save-2026.08.18-14.52.43.963.jpk-force",
+      "sha256": "972bcd290b8f0f2fd79ae3af7f85217229ba80c7770895b67e1b7976e9b5d7dd"
+    },
+    {
+      "bytes": 2551110,
+      "path": "calibration/2/thermal-noise-data_vDeflection_2026.08.18-14.47.16.tnd",
+      "sha256": "30be4bc9336acf64e8cbe98d023ad5c332e0eb3dc87bbbc54e6cc5148d679c93"
+    },
+    {
+      "bytes": 2550022,
+      "path": "calibration/2/thermal-noise-data_vDeflection_2026.08.18-14.47.49.tnd",
+      "sha256": "c8db7222476d79a3e8f63eca26e2dd1ad56133ffc21eb17732be144c48e4688e"
+    },
+    {
+      "bytes": 2551263,
+      "path": "calibration/2/thermal-noise-data_vDeflection_2026.08.18-14.48.20.tnd",
+      "sha256": "94b25890c1a7512c781bafffa65331572039a6d15eca8a00157bdd6e40cc409b"
+    },
+    {
+      "bytes": 2551147,
+      "path": "calibration/2/thermal-noise-data_vDeflection_2026.08.18-14.48.42.tnd",
+      "sha256": "7d1899c21b52a797a54bb14fe0a329b4052fbdfaabec14161e8bc2f10bf9f072"
+    },
+    {
+      "bytes": 2551743,
+      "path": "calibration/2/thermal-noise-data_vDeflection_2026.08.18-14.49.09.tnd",
+      "sha256": "74c541abcfc235a1b2dabc52741b1a7c47163296c0b765d9cbc53f5697ef5aee"
+    },
+    {
+      "bytes": 37240,
+      "path": "calibration/3/force-save-2026.08.18-14.37.34.763.jpk-force",
+      "sha256": "6acefcd4a58032f24fb42dc3227f1656c6067dfc87d97e79c69af895161103db"
+    },
+    {
+      "bytes": 37115,
+      "path": "calibration/3/force-save-2026.08.18-14.37.54.280.jpk-force",
+      "sha256": "3f72901ab3005986c78e852041fd73a5723f605f811b081d24f8573b3ea8c9fd"
+    },
+    {
+      "bytes": 36984,
+      "path": "calibration/3/force-save-2026.08.18-14.37.59.964.jpk-force",
+      "sha256": "aa037a57d6183bb3e6273d2d2e6fa9d9483e70623a87d76931fe3978a77b5175"
+    },
+    {
+      "bytes": 37182,
+      "path": "calibration/3/force-save-2026.08.18-14.38.05.056.jpk-force",
+      "sha256": "21150a35e4b939950c7740285dc0b7e11b7ec95fa37bd1f3145bcd72127bdc6c"
+    },
+    {
+      "bytes": 36942,
+      "path": "calibration/3/force-save-2026.08.18-14.38.28.921.jpk-force",
+      "sha256": "99a865d9e12331b1d6bc4c9ec41fe899b25cc6713523e8e87fcb03d01e5d3ca0"
+    },
+    {
+      "bytes": 2561812,
+      "path": "calibration/3/thermal-noise-data_vDeflection_2026.08.18-14.01.42.tnd",
+      "sha256": "bc1304d7cba74e6dcdc14b4df9adc5d78f0cdba4a40765f81a6669c60df37f53"
+    },
+    {
+      "bytes": 2561604,
+      "path": "calibration/3/thermal-noise-data_vDeflection_2026.08.18-14.30.13.tnd",
+      "sha256": "daca523b0a0ef674cf2d9f08fd21bb6db6fd544f26c8ccd41b53fb27c27ac95f"
+    },
+    {
+      "bytes": 2553422,
+      "path": "calibration/3/thermal-noise-data_vDeflection_2026.08.18-14.30.33.tnd",
+      "sha256": "ef251fb5ab00b6fb6228608441114c5c2cdaf994478e7396241dd48d955a03f4"
+    },
+    {
+      "bytes": 2561721,
+      "path": "calibration/3/thermal-noise-data_vDeflection_2026.08.18-14.31.48.tnd",
+      "sha256": "e6ca694de507e2e19fdd8df143be03004b3e80b2ad09af4315c9185dffe25ad0"
+    },
+    {
+      "bytes": 2561093,
+      "path": "calibration/3/thermal-noise-data_vDeflection_2026.08.18-14.32.29.tnd",
+      "sha256": "2c54ec0654f1e4b68bd06d7de97689d0e1e1d9071708119bbc0545f2540e772f"
+    }
+  ],
+  "temperature_C": 25.6,
+  "temperature_K": 298.75
+}

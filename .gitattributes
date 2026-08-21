@@ -1,0 +1,4 @@
+# Derived CSV artifacts use their generator's original CRLF bytes. Preserve
+# those bytes so committed artifact manifests remain valid, and treat CR as
+# part of the line ending for whitespace checks.
+*.csv -text whitespace=cr-at-eol

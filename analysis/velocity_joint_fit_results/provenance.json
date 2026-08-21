@@ -1,0 +1,75 @@
+{
+  "analysis_script": "analysis/analyze_velocity_joint_fit.py",
+  "analysis_script_sha256": "4acb5f377bb6c7905d369dec88a1adc7f7ce1e200df46dc93903d08a3226b4cc",
+  "dependency_scripts": {
+    "fit_glycerol_surface_forces.py": "560e2556b6289a9433d694ef42836728e71eeb86589c88dfe049513fa4a79b4e",
+    "analyze_velocity_systematics.py": "5070c5d5206781beedd39789aee08789981b1d3e24358b9f5a08756edee4bb26"
+  },
+  "python": "3.13.5 (main, May  5 2026, 21:05:52) [GCC 14.2.0]",
+  "numpy": "2.2.4",
+  "scipy": "1.15.3",
+  "matplotlib": "3.10.1+dfsg1",
+  "random_seed": 20260821,
+  "bootstrap_replicates_event_metrics": 1000,
+  "bootstrap_replicates_force_bins": 500,
+  "spatial_block_size_pixels": 4,
+  "temperature_C": 25.6,
+  "temperature_K": 298.75,
+  "spring_constant_N_per_m": 0.2969899086921243,
+  "probe_radius_m": 4.546848945303745e-06,
+  "hamaker_J": 2.4e-21,
+  "epsilon_r": {
+    "0": 78.5,
+    "10": 76.0,
+    "20": 73.9,
+    "30": 71.4,
+    "40": 68.9
+  },
+  "viscosity_model": "Cheng glycerol-water mass-fraction correlation",
+  "jpk_embedded_sensitivity_used": false,
+  "jpk_embedded_force_used": false,
+  "sensitivity_method": "equal-source-weighted concentration consensus from all accepted raw hard contacts",
+  "force_reconstruction": "F=k*S_concentration*(V-Vreference)",
+  "distance_definition": "D=measuredHeight+delta-h_contact using the preliminary robust far-linear baseline for delta/contact alignment",
+  "raw_force_pairing_baseline": "far-field median voltage constant only; slope retained and fitted jointly",
+  "map_experimental_unit": true,
+  "pixel_role": "same-location pairing and within-area spatial-block uncertainty only",
+  "qc_excluded_concentration_wt_percent": 10,
+  "thirty_wt_load_split_nN": 12.0,
+  "joint_fit_window_nm": [
+    25.0,
+    250.0
+  ],
+  "contact_zero_sensitivity_shifts_nm": [
+    -2.5,
+    2.5
+  ],
+  "contact_zero_shift_convention": "D_model=D_observed+shift; fit-window selection is applied to D_model",
+  "leave_one_speed_out_labels_um_per_s": [
+    1.0,
+    2.0,
+    4.0
+  ],
+  "hydrodynamic_model": "leading no-slip sphere-plane lubrication 6*pi*eta*R^2*U/D",
+  "hydrodynamic_speed": "Savitzky-Golay derivative of contact-aligned D with implausible local derivatives replaced by robust measuredHeight speed",
+  "joint_force_model": "g_map*(nonlinear equal-potential PB Derjaguin + van der Waals + chi*hydrodynamic)+a_map+b_map*(D-Dcenter)",
+  "contact_scale_observation_sigma_floor_fraction": 0.02,
+  "model_comparison_score": "Gaussian AICc with -2logL equal to joint weighted chi-square of force bins and separate map contact-scale observations; their uncertainty scales are held fixed",
+  "retract_rule": "only verified unsaturated free side before detected snap-off; adhered and censored branches excluded",
+  "local_interval_limit": "distance bins correlated and map-speed sequentially confounded; local Jacobian intervals are not experimental confidence intervals",
+  "approximations": {
+    "primary_max_D_over_R": 0.05498313293609959,
+    "max_reynolds_estimate_rho1000_U4um_s_R_eta_water": 2.0652349903839852e-05
+  },
+  "self_checks": {
+    "hydrodynamic_force_water_1um_s_100nm_pN": 3.4318098707970903,
+    "hydrodynamic_inverse_distance_relative_error": 0.0,
+    "hydrodynamic_linear_speed_relative_error": 0.0,
+    "smoothed_gap_velocity_max_abs_error_um_per_s": 8.645528737361019e-12,
+    "spatial_block_constant_ci_exact": true,
+    "spatial_block_count_16x16_with_4x4_blocks": 16,
+    "synthetic_pair_chi_absolute_error": 4.440892098500626e-16,
+    "pb_linear_limit_max_relative_error": 0.0016521456620162134,
+    "pb_far_asymptote_max_relative_error": 0.0010543386009638223
+  }
+}

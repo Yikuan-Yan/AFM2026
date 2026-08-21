@@ -1,0 +1,70 @@
+{
+  "analysis_script": "analysis/fit_glycerol_surface_forces.py",
+  "analysis_script_sha256": "560e2556b6289a9433d694ef42836728e71eeb86589c88dfe049513fa4a79b4e",
+  "python": "3.13.5 (main, May  5 2026, 21:05:52) [GCC 14.2.0]",
+  "numpy": "2.2.4",
+  "scipy": "1.15.3",
+  "matplotlib": "3.10.1+dfsg1",
+  "temperature_C": 25.6,
+  "temperature_K": 298.75,
+  "spring_constant_N_per_m": 0.2969899086921243,
+  "spring_constant_repeatability_sd_N_per_m": 0.0092768833,
+  "probe_radius_m": 4.546848945303745e-06,
+  "probe_radius_range_m": [
+    3.980307e-06,
+    4.546849e-06
+  ],
+  "hamaker_J": 2.4e-21,
+  "epsilon_r": {
+    "0": 78.5,
+    "10": 76.0,
+    "20": 73.9,
+    "30": 71.4,
+    "40": 68.9
+  },
+  "epsilon_r_source": {
+    "table_url": "https://www.cleaninginstitute.org/sites/default/files/research-pdfs/Physical_properties_of_glycerine_and_its_solutions.pdf",
+    "table": 27,
+    "temperature_C": 25.0,
+    "measurement_frequency_Hz": 570000.0,
+    "tabulated_glycerol_wt_percent": [
+      0.0,
+      9.88,
+      20.33,
+      30.19,
+      39.67
+    ],
+    "tabulated_epsilon_r": [
+      78.48,
+      75.98,
+      73.86,
+      71.44,
+      68.93
+    ],
+    "modern_primary_measurement_doi": "10.1063/1.2188391"
+  },
+  "randomness": "none",
+  "jpk_embedded_sensitivity_used": false,
+  "jpk_embedded_force_used": false,
+  "sensitivity_aggregation": "one equal-source-weighted raw hard-contact consensus per glycerol concentration",
+  "far_field_linear_drift": {
+    "coordinate": "raw measuredHeight in m",
+    "signal": "raw vDeflection in V",
+    "window": "initial 20 percent of approach, minimum 80 points",
+    "fit": "four-pass robust line with 3.5-MAD residual rejection",
+    "operator": "subtract fitted slope and intercept from the full trace before contact and force conversion",
+    "slope_output_unit": "pN per 100 nm measuredHeight",
+    "resolved_drift_diagnostic": "absolute fitted change across far window greater than two residual MAD",
+    "map_geometry": "16x16 physical raster with serpentine acquisition rows restored",
+    "montage_global_symmetric_color_limit_pN_per_100nm": 60.0
+  },
+  "speed_extrapolation_interpretation": "operational only; map speed slopes oppose no-slip lubrication",
+  "self_checks": {
+    "far_field_synthetic_slope_relative_error": 5.995204332975845e-15,
+    "far_field_synthetic_subtraction_max_abs_V": 4.163336342344337e-17,
+    "pb_linear_limit_max_relative_error": 0.0016521456620162134,
+    "pb_far_asymptote_max_relative_error": 0.0010543386009638223,
+    "cheng_water_viscosity_mPa_s": 0.8806453437937073,
+    "cheng_glycerol_viscosity_mPa_s": 860.333956853547
+  }
+}

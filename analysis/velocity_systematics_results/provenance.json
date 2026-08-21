@@ -1,0 +1,48 @@
+{
+  "analysis_script": "analysis/analyze_velocity_systematics.py",
+  "analysis_script_sha256": "5070c5d5206781beedd39789aee08789981b1d3e24358b9f5a08756edee4bb26",
+  "raw_decoder_script": "analysis/fit_glycerol_surface_forces.py",
+  "raw_decoder_script_sha256": "560e2556b6289a9433d694ef42836728e71eeb86589c88dfe049513fa4a79b4e",
+  "python": "3.13.5 (main, May  5 2026, 21:05:52) [GCC 14.2.0]",
+  "numpy": "2.2.4",
+  "scipy": "1.15.3",
+  "matplotlib": "3.10.1+dfsg1",
+  "temperature_C": 25.6,
+  "spring_constant_N_per_m": 0.2969899086921243,
+  "jpk_embedded_sensitivity_used": false,
+  "jpk_embedded_force_used": false,
+  "sensitivity_method": "equal-source-weighted concentration consensus from raw approach hard-contact fits",
+  "primary_concentrations_wt_percent": [
+    0,
+    20,
+    30,
+    40
+  ],
+  "qc_excluded_concentration_wt_percent": 10,
+  "experimental_unit_for_velocity": "one complete map",
+  "pixel_role": "within-map heterogeneity and spatial/acquisition-order diagnostics only",
+  "minimum_map_event_support_fraction_for_velocity_summary": 0.5,
+  "event_detector": {
+    "orientation": "both branches normalized far-to-contact",
+    "median_filter_points": 5,
+    "difference_lag_points": 2,
+    "approach_sigma_multiplier": 8.0,
+    "retract_sigma_multiplier": 10.0,
+    "approach_absolute_floor_pN": 50.0,
+    "retract_absolute_floor_pN": 25.0,
+    "far_residual_multiplier": 5.0
+  },
+  "raw_encoder_floor_qc": {
+    "integer_margin_counts": "max(1024, 1e-6 of integer range)",
+    "observed_signed_int32_floor": -2147483600,
+    "pull_off_policy": "exact only when adhered branch contains no floor-clipped samples",
+    "free_retract_baseline_policy": "at least 80 leading unsaturated far-to-contact samples"
+  },
+  "randomness": "none",
+  "self_checks": {
+    "synthetic_step_detected": true,
+    "synthetic_step_index_error_points": 0,
+    "smooth_trace_rejected": true,
+    "serpentine_mapping_check": true
+  }
+}
