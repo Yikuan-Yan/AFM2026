@@ -1,0 +1,80 @@
+{
+  "analysis_script": "analysis/analyze_zero_wt_distribution_separation.py",
+  "analysis_script_sha256": "7bc4d811db397937a000e07232ae7af3d314a76f96f0a56adcc666e955de2b99",
+  "dependency_script_sha256": {
+    "analyze_velocity_joint_fit.py": "4acb5f377bb6c7905d369dec88a1adc7f7ce1e200df46dc93903d08a3226b4cc",
+    "analyze_velocity_systematics.py": "5070c5d5206781beedd39789aee08789981b1d3e24358b9f5a08756edee4bb26",
+    "fit_glycerol_surface_forces.py": "560e2556b6289a9433d694ef42836728e71eeb86589c88dfe049513fa4a79b4e"
+  },
+  "raw_sources": [
+    {
+      "path": "20-08-26/0/force-save-2026.08.20-14.59.33.875.jpk-force",
+      "sha256": "cce28867bac88182c048fb5439ef5f96ad2b93483e58b2408222c9ab0295c098",
+      "source_type": "force",
+      "timestamp": "2026-08-20T14:59:33.875000"
+    },
+    {
+      "path": "20-08-26/0/map-data-2026.08.20-15.01.47.915.jpk-force-map",
+      "sha256": "ff71db18bf7e76ee05d8e859c3fad4a6974465abba772a4ba6e629dbc3ec108d",
+      "source_type": "map",
+      "timestamp": "2026-08-20T15:01:47.915000"
+    },
+    {
+      "path": "20-08-26/0/map-data-2026.08.20-15.06.26.277.jpk-force-map",
+      "sha256": "5f2c630298c22d5835b58071548f50975c82a0c3aba7b3ee611d7576fc66a608",
+      "source_type": "map",
+      "timestamp": "2026-08-20T15:06:26.277000"
+    },
+    {
+      "path": "20-08-26/0/force-save-2026.08.20-15.15.19.592.jpk-force",
+      "sha256": "85f6967d29f3832b04c268145fe7cf89c528253b5264dde20abdef42723072f0",
+      "source_type": "force",
+      "timestamp": "2026-08-20T15:15:19.592000"
+    },
+    {
+      "path": "20-08-26/0/force-save-2026.08.20-15.15.29.074.jpk-force",
+      "sha256": "23d6e35d9c6a84133a3c4ef9954fcd6c46c33033425a836947a6ee279d880147",
+      "source_type": "force",
+      "timestamp": "2026-08-20T15:15:29.074000"
+    },
+    {
+      "path": "20-08-26/0/force-save-2026.08.20-15.15.38.488.jpk-force",
+      "sha256": "ca09c652c31ef4e1a16c10aaf663660940b4e8c390bd5c64cc6200ea908c6ff4",
+      "source_type": "force",
+      "timestamp": "2026-08-20T15:15:38.488000"
+    },
+    {
+      "path": "20-08-26/0/map-data-2026.08.20-15.15.57.076.jpk-force-map",
+      "sha256": "f98d7f1a5e3c7f37c21a1a64eef93db8315b691612c95ead85b0646a80cda1fa",
+      "source_type": "map",
+      "timestamp": "2026-08-20T15:15:57.076000"
+    },
+    {
+      "path": "20-08-26/0/force-save-2026.08.20-15.18.48.223.jpk-force",
+      "sha256": "9f4622480cf1f06cc9781712ee0a89c0637f31ba24cd5c535aab2a6c30a9fd13",
+      "source_type": "force",
+      "timestamp": "2026-08-20T15:18:48.223000"
+    }
+  ],
+  "python": "3.13.5",
+  "numpy": "2.2.4",
+  "random_seed": 20260824,
+  "bootstrap_replicates": 10000,
+  "primary_spatial_block_size_pixels": 4,
+  "paired_pixel_count": 255,
+  "distance_window_nm": [
+    25.0,
+    250.0
+  ],
+  "distance_step_nm": 5.0,
+  "force_unit": "pN",
+  "force_branch": "per-curve far-linear-drift-corrected approach",
+  "sensitivity_nm_per_V": 66.60881418937791,
+  "spring_constant_N_per_m": 0.2969899086921243,
+  "map_acquisition_order_um_per_s": [
+    2,
+    1,
+    4
+  ],
+  "experimental_unit_limit": "one sequential map per speed; spatial blocks quantify conditional within-area heterogeneity, not replicated velocity-treatment uncertainty"
+}

@@ -2,3 +2,6 @@
 # those bytes so committed artifact manifests remain valid, and treat CR as
 # part of the line ending for whitespace checks.
 *.csv -text whitespace=cr-at-eol
+
+# Matplotlib SVG path data commonly carries spaces before line breaks.
+*.svg whitespace=-blank-at-eol,-blank-at-eof
