@@ -1,10 +1,11 @@
 # Silica–silica 球–面 AFM 后续实验方案
 
-- **版本：** 1.0
-- **日期：** 2026-08-21
+- **版本：** 1.1
+- **日期：** 2026-08-24
 - **目标温度：** 25.6 °C
 - **体系：** silica colloidal probe–silica plane；水–甘油混合物；不外加盐
-- **主浓度：** 0、20、30、40 wt% glycerol；10 wt% 不进入主实验和主拟合
+- **现阶段主浓度：** 0、20、30、40 wt% glycerol；10 wt% 不进入主实验和主拟合
+- **后续扩展范围：** 0–99.5 wt% glycerol；目标 equilibrium force 距离范围 20–200 nm
 - **主 cantilever：** cantilever 1，固定使用独立标定的 `k = 0.2969899087 N/m`
 **主球半径：** `R = 4.546849 µm`（局部球冠拟合值，不是全颗粒无条件真值）
 
@@ -598,3 +599,106 @@ laser_sum, baseline_adjust_setting, operator_intervention, qc_status, notes
 - glycerol–water viscosity correlation：[Cheng, Industrial & Engineering Chemistry Research (2008)](https://doi.org/10.1021/ie071349z)。
 - mixture dielectric properties：[Behrends et al., J. Chem. Eng. Data (2006)](https://pubmed.ncbi.nlm.nih.gov/16626219/)。
 - equal-surface electrostatic interaction与 nonlinear PB/Derjaguin：[Hogg–Healy–Fuerstenau](https://pubs.rsc.org/en/content/articlehtml/1966/tf/tf9666201638)、[Stankovich and Carnie](https://pubs.acs.org/doi/10.1021/la950384k)、[Polat and Polat](https://doi.org/10.1016/j.jcis.2009.09.008)。
+
+## 16. 2026-08-24 扩展记录：0–99.5 wt% 与 20–200 nm
+
+本节记录后续研究范围的改变：最终目标从现阶段的 0、20、30、40 wt% 扩展到 `0–99.5 wt% glycerol`，并要求得到 `20–200 nm` 内的 equilibrium force。以下高浓度数值是实验设计用的 no-slip hydrodynamic 估算，不是现有数据已经测得的总表面力，也不是 PB equilibrium force。
+
+### 16.1 固定 0.1/0.2 µm/s 不再是全浓度低-hyd 方案
+
+在 25.6 °C、`R = 4.546849 µm` 下，采用 Cheng mass-fraction viscosity correlation 和球–面 leading lubrication force：
+
+```text
+F_hyd(D,U) = 6 pi eta R^2 U_gap / D
+
+F_hyd[pN] = 3.89693 eta[mPa s] U_gap[um/s] (100 nm / D)
+F_hyd(20 nm)[pN] = 19.4846 eta[mPa s] U_gap[um/s]
+```
+
+表中为 `U_gap = 0.1 µm/s` 的理论力幅值；`0.2 µm/s` 时所有力乘 2。
+
+| glycerol wt% | η at 25.6 °C (mPa·s) | 20 nm | 50 nm | 100 nm | 200 nm |
+|---:|---:|---:|---:|---:|---:|
+| 0 | 0.8806 | 1.72 pN | 0.686 pN | 0.343 pN | 0.172 pN |
+| 20 | 1.5013 | 2.93 pN | 1.17 pN | 0.585 pN | 0.293 pN |
+| 40 | 3.0796 | 6.00 pN | 2.40 pN | 1.20 pN | 0.600 pN |
+| 60 | 8.6369 | 16.8 pN | 6.73 pN | 3.37 pN | 1.68 pN |
+| 70 | 17.5529 | 34.2 pN | 13.7 pN | 6.84 pN | 3.42 pN |
+| 80 | 43.8413 | 85.4 pN | 34.2 pN | 17.1 pN | 8.54 pN |
+| 90 | 150.027 | 292 pN | 117 pN | 58.5 pN | 29.2 pN |
+| 95 | 330.591 | 644 pN | 258 pN | 129 pN | 64.4 pN |
+| 97.5 | 520.687 | 1.015 nN | 406 pN | 203 pN | 101 pN |
+| 99 | 699.400 | 1.363 nN | 545 pN | 273 pN | 136 pN |
+| 99.5 | 774.866 | 1.510 nN | 604 pN | 302 pN | 151 pN |
+
+因此 `0.1/0.2 µm/s` 只能在低黏度区间按具体 force uncertainty 判断是否足够小；它们在接近纯甘油时绝不能称为 hydrodynamics-negligible。尤其在 99.5 wt%，0.1 µm/s 已给出约 `1.51 nN -> 151 pN`（20→200 nm），0.2 µm/s 为其两倍。
+
+### 16.2 “可忽略”的速度阈值及其不可行性
+
+以最严格的 20 nm 端点定义全窗口 hyd force 上限，在 99.5 wt% 时：
+
+| 允许的 `F_hyd(20 nm)` | 最大 `U_gap` | 等价速度 |
+|---:|---:|---:|
+| 5 pN | 0.000331 µm/s | 0.331 nm/s |
+| 50 pN | 0.00331 µm/s | 3.31 nm/s |
+| 100 pN | 0.00662 µm/s | 6.62 nm/s |
+
+将全窗口 hyd 压到 5 pN 以下会使完整 8×8 mapping 极慢，不能作为覆盖 0–99.5 wt% 的主策略。正式目标应从“把 hyd 降到零”改为“在可识别的多个 `eta U` 水平测量，并得到 `U -> 0` 截距”。
+
+### 16.3 远场归零不会消除 hydrodynamic force
+
+上述表格是相对于无限远的物理 no-slip 力。如果软件或 preprocessing 在有限参考距离 `D_ref` 设零，constant-referenced hyd 分量变为：
+
+```text
+F_hyd,referenced(D) = 6 pi eta R^2 U [1/D - 1/D_ref].
+```
+
+例如 `D_ref = 850 nm` 时，在 20、50、100、200 nm 分别仍保留原始 `1/D` 信号的约 `97.6%`、`94.1%`、`88.2%`、`76.5%`。有限距离归零只是减掉一部分 hyd 并改变其距离形状；它不能把该分量定义成零。远场线性 detrending 会进一步吸收真实 `1/D` 信号，因此 line-corrected branch 只用于 QC/sensitivity，不作为 hyd 定量主分支。
+
+### 16.4 扩展实验的速度选择和拟合口径
+
+速度应按 `eta(c) U_gap` 设计，而不是让所有浓度使用相同 nominal velocity。若用 20 nm 处的理论 hyd 幅值作为设计变量，则：
+
+```text
+U_target(c) = F_hyd,target(20 nm) / [19.4846 eta(c)].
+```
+
+下表给出三个可识别 hyd 水平的设计速度；它们是 acquisition-time/pilot 之前的物理基准，不是未经仪器验证就直接冻结的设置。
+
+| wt% | `F20=50 pN` speed | `F20=100 pN` speed | `F20=200 pN` speed |
+|---:|---:|---:|---:|
+| 0 | 2.91 µm/s | 5.83 µm/s | 11.7 µm/s |
+| 20 | 1.71 µm/s | 3.42 µm/s | 6.84 µm/s |
+| 40 | 0.833 µm/s | 1.67 µm/s | 3.33 µm/s |
+| 60 | 0.297 µm/s | 0.594 µm/s | 1.19 µm/s |
+| 70 | 0.146 µm/s | 0.292 µm/s | 0.585 µm/s |
+| 80 | 0.0585 µm/s | 0.117 µm/s | 0.234 µm/s |
+| 90 | 0.0171 µm/s | 0.0342 µm/s | 0.0684 µm/s |
+| 95 | 0.00776 µm/s | 0.0155 µm/s | 0.0310 µm/s |
+| 99.5 | 0.00331 µm/s | 0.00662 µm/s | 0.0132 µm/s |
+
+低浓度端的最高速度可能受 JPK bandwidth、采样率、snap/contact lag 和 surface-history 限制；高浓度端的最低速度可能受 map duration 和 drift 限制。因此正式设置允许分浓度带使用不同的 1:2:4 triplet，但必须在 pilot 前写明选择规则，并覆盖足够的 `eta U` leverage。不能看过 force 结果后再为每个浓度选择有利速度。
+
+扩展数据的主观察模型记录为：
+
+```text
+F_app(D,U,c) = F_eq(D,c)
+             + A(D,c) U_gap
+             + b_map + m_map t
+             + error,
+
+A(D,c) approximately proportional to eta(c)/D.
+```
+
+主报告中的 20–200 nm force 必须是 map/block/session 层级支持的 `U -> 0` intercept `F_eq(D,c)`。随后才使用 equal-silica sphere–plane PB 模型拟合 effective screening length 和共同 boundary-potential magnitude。任何单一有限速度曲线都只能称为 apparent dynamic force，不能直接称为 equilibrium surface force。
+
+继续沿用以下实验约束：
+
+- 每张 8×8 map 内速度固定，以完整 map 作为 velocity experimental unit；pixel 是空间配对样本，不是独立速度重复。
+- 每个浓度采用 time-balanced palindrome map order，并计算实际 `U_gap = -dD/dt`；nominal scanner speed 只作标签。
+- 主拟合保留 raw/constant-referenced 数据，将 offset、time drift 和 hyd shape 联合估计；line-corrected 数据只作系统敏感性。
+- approach/retract odd-even 可作辅助检验，但只有在 retract 的 20–200 nm 区间有经验证的 free non-contact support 时才能使用。
+- 90–99.5 wt% 必须加强密闭、防吸水、前后 refractive-index/density 或实测 viscosity QC。25.6 °C 下 Cheng 模型给出的 99 与 99.5 wt% 黏度已相差约 10.8%，所以微小含水量误差会直接变成相同量级的 hyd force 误差。
+- 高黏度下还要用 selected-concentration hold tests 检查 double-layer/charge-regulation relaxation；若 force 存在不可忽略的 dwell-time dependence，不能把全部 rate dependence 强制归入线性 hyd 项。
+
+本扩展尚未改变现有 0、20、30、40 wt% 数据的证据等级；它记录的是后续 acquisition 和分析的设计边界。只有新的高浓度数据满足 map/session/order stability 和 `eta U/D` scaling 后，才能把零速外推称为已识别结果。

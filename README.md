@@ -12,7 +12,7 @@ Reproducible analysis code, derived results, quality-control figures and experim
 - `analysis/analyze_zero_wt_distribution_separation.py`: spatial-block bootstrap, simultaneous confidence bands and exact functional sign-flip tests for the three 0 wt% maps.
 - `analysis/analyze_zero_wt_classical_distribution_tests.py`: paired t/Wilcoxon, marginal Welch/Mann-Whitney/KS and three-group repeated-measures tests for the same maps.
 - `analysis/*_results/`: derived CSV data, figures, reports, provenance and SHA-256 manifests.
-- `analysis/FOLLOWUP_8X8_PALINDROME_FORCE_MAPPING_PROTOCOL.md`: detailed follow-up experiment using balanced 8×8 palindromic force mapping.
+- `analysis/FOLLOWUP_8X8_PALINDROME_FORCE_MAPPING_PROTOCOL.md`: detailed follow-up experiment using balanced 8×8 palindromic force mapping, including the 2026-08-24 extension to 0–99.5 wt% glycerol and equilibrium-force recovery over 20–200 nm.
 
 ## Current numerical snapshot
 
@@ -33,6 +33,8 @@ The current scientific interpretation and its limitations are documented in:
 - [`analysis/velocity_systematics_results/REPORT.md`](analysis/velocity_systematics_results/REPORT.md)
 - [`analysis/surface_force_results/REPORT.md`](analysis/surface_force_results/REPORT.md)
 - [`analysis/results/REPORT.md`](analysis/results/REPORT.md)
+
+The future concentration range is 0–99.5 wt% glycerol. At 25.6 °C the Cheng viscosity estimate rises from `0.8806 mPa s` in water to `774.9 mPa s` at 99.5 wt%, so a fixed approach speed of 0.1 or 0.2 µm/s cannot make hydrodynamic drainage negligible across the range. The protocol records concentration-dependent `eta U` speed design, finite-distance zero-force semantics and the requirement that the reported 20–200 nm equilibrium force be obtained from a map/block/session-supported `U -> 0` intercept rather than from one finite-speed curve.
 
 ## Raw-data policy
 
