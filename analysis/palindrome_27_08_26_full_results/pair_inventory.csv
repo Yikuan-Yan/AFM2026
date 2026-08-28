@@ -1,0 +1,16 @@
+block,nominal_speed_um_per_s,map_count,pair_status,early_source,late_source,used_in_pair_analysis
+1,0.05,2,complete_pair,27-08-26/0/map1-0.05-data-2026.08.27-14.14.18.398.jpk-force-map,27-08-26/0/map1-0.05-data-2026.08.27-14.27.55.012.jpk-force-map,True
+1,0.1,2,complete_pair,27-08-26/0/map1-0.1-data-2026.08.27-14.04.47.122.jpk-force-map,27-08-26/0/map1-0.1-data-2026.08.27-14.40.56.507.jpk-force-map,True
+1,0.2,2,complete_pair,27-08-26/0/map1-0.2-data-2026.08.27-14.00.12.429.jpk-force-map,27-08-26/0/map1-0.2-data-2026.08.27-14.47.23.611.jpk-force-map,True
+2,0.05,2,complete_pair,27-08-26/0/map2-0.05-data-2026.08.27-15.05.27.190.jpk-force-map,27-08-26/0/map2-0.05-data-2026.08.27-15.24.51.168.jpk-force-map,True
+2,0.1,2,complete_pair,27-08-26/0/map2-0.1-data-2026.08.27-14.58.45.160.jpk-force-map,27-08-26/0/map2-0.1-data-2026.08.27-15.36.15.070.jpk-force-map,True
+2,0.2,2,complete_pair,27-08-26/0/map2-0.2-data-2026.08.27-15.16.41.656.jpk-force-map,27-08-26/0/map2-0.2-data-2026.08.27-15.20.44.298.jpk-force-map,True
+3,0.05,2,complete_pair,27-08-26/0/map3-0.05-data-2026.08.27-15.48.41.060.jpk-force-map,27-08-26/0/map3-0.05-data-2026.08.27-16.29.39.734.jpk-force-map,True
+3,0.1,2,complete_pair,27-08-26/0/map3-0.1-data-2026.08.27-16.12.38.424.jpk-force-map,27-08-26/0/map3-0.1-data-2026.08.27-16.18.55.666.jpk-force-map,True
+3,0.2,2,complete_pair,27-08-26/0/map3-0.2-data-2026.08.27-16.09.07.348.jpk-force-map,27-08-26/0/map3-0.2-data-2026.08.27-16.25.10.504.jpk-force-map,True
+4,0.05,2,complete_pair,27-08-26/0/map4-0.05-data-2026.08.27-16.56.56.658.jpk-force-map,27-08-26/0/map4-0.05-data-2026.08.27-17.08.28.590.jpk-force-map,True
+4,0.1,2,complete_pair,27-08-26/0/map4-0.1-data-2026.08.27-16.50.32.826.jpk-force-map,27-08-26/0/map4-0.1-data-2026.08.27-17.19.56.860.jpk-force-map,True
+4,0.2,2,complete_pair,27-08-26/0/map4-0.2-data-2026.08.27-16.47.00.630.jpk-force-map,27-08-26/0/map4-0.2-data-2026.08.27-17.25.48.068.jpk-force-map,True
+5,0.05,2,complete_pair,27-08-26/0/map5-0.05-data-2026.08.27-17.38.13.338.jpk-force-map,27-08-26/0/map5-0.05-data-2026.08.27-17.57.18.559.jpk-force-map,True
+5,0.1,1,missing_late_map,27-08-26/0/map5-0.1-data-2026.08.27-17.31.45.428.jpk-force-map,,False
+5,0.2,2,complete_pair,27-08-26/0/map5-0.2-data-2026.08.27-17.49.29.094.jpk-force-map,27-08-26/0/map5-0.2-data-2026.08.27-17.53.38.834.jpk-force-map,True

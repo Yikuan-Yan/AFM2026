@@ -2481,9 +2481,60 @@ def _format_number(value: object, digits: int = 3) -> str:
     return f"{number:.{digits}g}" if np.isfinite(number) else "n/a"
 
 
+def measured_force_slice_median(
+    map_force_rows: list[dict],
+    concentration_wt_percent: int,
+    speed_label_um_per_s: float,
+    distance_nm: float,
+    force_column: str,
+) -> float:
+    """Return the median eligible map-level force for a report slice.
+
+    The 30 wt% comparison is restricted to the high-load stratum so that its
+    1, 2 and 4 um/s entries share the same approximately 18.5 nN load regime.
+    Each input row is already a valid-pixel median for one map and distance;
+    this function takes the median across eligible same-speed maps when more
+    than one exists.
+    """
+
+    values = []
+    for row in map_force_rows:
+        if not bool(row["primary_included"]):
+            continue
+        if int(row["concentration_wt_percent"]) != concentration_wt_percent:
+            continue
+        if concentration_wt_percent == 30 and str(row["load_regime"]) != "high_load":
+            continue
+        if not np.isclose(
+            float(row["speed_label_um_per_s"]),
+            float(speed_label_um_per_s),
+            rtol=0.0,
+            atol=1e-12,
+        ):
+            continue
+        if not np.isclose(
+            float(row["distance_nm"]),
+            float(distance_nm),
+            rtol=0.0,
+            atol=1e-12,
+        ):
+            continue
+        value = float(row[force_column])
+        if np.isfinite(value):
+            values.append(value)
+    if not values:
+        raise AssertionError(
+            "missing measured-force report slice for "
+            f"c={concentration_wt_percent}, U={speed_label_um_per_s}, "
+            f"D={distance_nm}, column={force_column}"
+        )
+    return float(np.median(np.asarray(values, dtype=np.float64)))
+
+
 def build_report(
     sources: list[base.SourceData],
     maps: list[MapData],
+    map_force_rows: list[dict],
     paired_metric_summaries: list[dict],
     association_rows: list[dict],
     hydro_rows: list[dict],
@@ -2580,6 +2631,65 @@ def build_report(
     lines += [
         "",
         "At 30 wt%, the first two 2 um/s maps are a roughly 6.7 nN low-load stratum. The later 2, 1, 1 and 4 um/s maps are a roughly 18.5 nN high-load stratum. Cross-stratum differences are not used as velocity contrasts.",
+        "",
+        "## Measured force-distance slices",
+        "",
+        "The following values are measured approach-force summaries, not PB/hydrodynamic fit components and not a zero-speed extrapolation. Each input value is the valid-pixel median of one map at the stated separation; where multiple eligible maps exist at the same concentration and speed, the table reports the median of those map medians. Ten wt% is excluded. The 30 wt% row uses only the approximately 18.5 nN high-load stratum; the previously quoted approximately 665 pN value at 2 um/s and 50 nm came from the incompatible low-load stratum, whereas the comparable high-load value is 579.4 pN.",
+        "",
+        "The primary table uses `force_linear_drift_corrected_pN`, obtained after subtracting a fitted far-field linear baseline:",
+        "",
+        "| D (nm) | wt% / load stratum | 1 um/s (pN) | 2 um/s (pN) | 4 um/s (pN) |",
+        "|---:|:---|---:|---:|---:|",
+    ]
+    for distance_nm in (25.0, 50.0, 100.0, 150.0, 200.0):
+        for concentration in PRIMARY_CONCENTRATIONS:
+            load_label = (
+                f"{concentration} high-load" if concentration == 30 else str(concentration)
+            )
+            values = [
+                measured_force_slice_median(
+                    map_force_rows,
+                    concentration,
+                    speed,
+                    distance_nm,
+                    "force_linear_drift_corrected_pN",
+                )
+                for speed in (1.0, 2.0, 4.0)
+            ]
+            lines.append(
+                f"| {distance_nm:.0f} | {load_label} | "
+                + " | ".join(f"{value:.1f}" for value in values)
+                + " |"
+            )
+    lines += [
+        "",
+        "For zero-reference sensitivity, the same 50 nm slices after subtracting only a far-field constant, while retaining the far-field slope, are:",
+        "",
+        "| wt% / load stratum | 1 um/s (pN) | 2 um/s (pN) | 4 um/s (pN) |",
+        "|:---|---:|---:|---:|",
+    ]
+    for concentration in PRIMARY_CONCENTRATIONS:
+        load_label = (
+            f"{concentration} high-load" if concentration == 30 else str(concentration)
+        )
+        values = [
+            measured_force_slice_median(
+                map_force_rows,
+                concentration,
+                speed,
+                50.0,
+                "force_raw_far_constant_referenced_pN",
+            )
+            for speed in (1.0, 2.0, 4.0)
+        ]
+        lines.append(
+            f"| {load_label} | "
+            + " | ".join(f"{value:.1f}" for value in values)
+            + " |"
+        )
+    lines += [
+        "",
+        "Both tables use the reconstructed concentration-specific sensitivity and calibrated cantilever-1 spring constant. They still contain equilibrium interaction, residual hydrodynamic force, acquisition history and other systematics. The large difference between the line-corrected and constant-referenced branches shows that the far-field slope cannot be silently identified as purely instrumental drift. Because the primary table has had that slope removed, it is not an absolute force-distance relation.",
         "",
         "## Same-pixel event and contact comparisons",
         "",
@@ -2899,6 +3009,7 @@ def run(results_dir: Path) -> None:
     report = build_report(
         sources,
         maps,
+        map_force_rows,
         metric_summaries,
         association_rows,
         hydro_rows,

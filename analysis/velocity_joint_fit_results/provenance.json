@@ -1,6 +1,6 @@
 {
   "analysis_script": "analysis/analyze_velocity_joint_fit.py",
-  "analysis_script_sha256": "4acb5f377bb6c7905d369dec88a1adc7f7ce1e200df46dc93903d08a3226b4cc",
+  "analysis_script_sha256": "5c90025d428708289793ad46e1a11acb363f31144727fe701e3294633dcc54b9",
   "dependency_scripts": {
     "fit_glycerol_surface_forces.py": "560e2556b6289a9433d694ef42836728e71eeb86589c88dfe049513fa4a79b4e",
     "analyze_velocity_systematics.py": "5070c5d5206781beedd39789aee08789981b1d3e24358b9f5a08756edee4bb26"

@@ -1,0 +1,46 @@
+block,metric,metric_label,unit,low_actual_speed_um_per_s,high_actual_speed_um_per_s,high_minus_low_pair_symmetric_value,slope_per_um_per_s,claim_status
+1,map_contact_invOLS_median_nm_per_V,InvOLS,nm/V,0.049361446369162475,0.19646557354775118,-0.03994232459740488,-0.2715241602223283,paired_map_QC; diagnostic_not_force_correction
+1,terminal_load_median_nN,terminal load,nN,0.049361446369162475,0.19646557354775118,-0.038554525311312204,-0.26209003140004283,paired_map_QC; diagnostic_not_force_correction
+1,far_slope_median_pN_per_100nm,far slope,pN/100 nm,0.049361446369162475,0.19646557354775118,-0.9507962968448949,-6.463423665133477,paired_map_QC; diagnostic_not_force_correction
+1,contact_height_median_um,contact height,um,0.049361446369162475,0.19646557354775118,-0.011822053453929726,-0.08036520579451457,paired_map_QC; diagnostic_not_force_correction
+1,approach_snap_detected_fraction,approach snap-detected fraction,fraction,0.049361446369162475,0.19646557354775118,-0.09375,-0.6373036691634407,paired_map_QC; diagnostic_not_force_correction
+1,approach_snap_distance_median_nm,approach snap distance,nm,0.049361446369162475,0.19646557354775118,38.02743041285686,258.5068899303583,paired_map_QC; diagnostic_not_force_correction
+1,retract_detachment_piezo_travel_median_nm,retract detachment travel,nm,0.049361446369162475,0.19646557354775118,-15.395547923432503,-104.65748459077466,paired_map_QC; diagnostic_not_force_correction
+1,retract_pull_off_force_median_nN,retract pull-off,nN,0.049361446369162475,0.19646557354775118,0.24799695736590088,1.6858599559536853,paired_map_QC; diagnostic_not_force_correction
+1,branch_contact_height_difference_median_nm,approach-retract contact-height difference,nm,0.049361446369162475,0.19646557354775118,0.07418934345182437,0.5043321684765265,paired_map_QC; diagnostic_not_force_correction
+2,map_contact_invOLS_median_nm_per_V,InvOLS,nm/V,0.04779894881022077,0.19087118195358638,0.10321734328505272,0.7214351870891939,paired_map_QC; diagnostic_not_force_correction
+2,terminal_load_median_nN,terminal load,nN,0.04779894881022077,0.19087118195358638,-0.025879690429736257,-0.18088548603140556,paired_map_QC; diagnostic_not_force_correction
+2,far_slope_median_pN_per_100nm,far slope,pN/100 nm,0.04779894881022077,0.19087118195358638,0.10374646797757947,0.7251334916511737,paired_map_QC; diagnostic_not_force_correction
+2,contact_height_median_um,contact height,um,0.04779894881022077,0.19087118195358638,-0.0051684787298444945,-0.03612496021268794,paired_map_QC; diagnostic_not_force_correction
+2,approach_snap_detected_fraction,approach snap-detected fraction,fraction,0.04779894881022077,0.19087118195358638,-0.125,-0.8736845525766254,paired_map_QC; diagnostic_not_force_correction
+2,approach_snap_distance_median_nm,approach snap distance,nm,0.04779894881022077,0.19087118195358638,105.05354233208804,734.2692570319994,paired_map_QC; diagnostic_not_force_correction
+2,retract_detachment_piezo_travel_median_nm,retract detachment travel,nm,0.04779894881022077,0.19087118195358638,1.4705654302234592,10.278482399515484,paired_map_QC; diagnostic_not_force_correction
+2,retract_pull_off_force_median_nN,retract pull-off,nN,0.04779894881022077,0.19087118195358638,0.3972833554018097,2.7768026448829644,paired_map_QC; diagnostic_not_force_correction
+2,branch_contact_height_difference_median_nm,approach-retract contact-height difference,nm,0.04779894881022077,0.19087118195358638,-0.26256451123601343,-1.8351884601738937,paired_map_QC; diagnostic_not_force_correction
+3,map_contact_invOLS_median_nm_per_V,InvOLS,nm/V,0.048016408350180846,0.19165641955162213,0.21743076645888948,1.5137200605892724,paired_map_QC; diagnostic_not_force_correction
+3,terminal_load_median_nN,terminal load,nN,0.048016408350180846,0.19165641955162213,-0.017505465923274954,-0.12187040210352826,paired_map_QC; diagnostic_not_force_correction
+3,far_slope_median_pN_per_100nm,far slope,pN/100 nm,0.048016408350180846,0.19165641955162213,2.8040743356107583,19.52154077514178,paired_map_QC; diagnostic_not_force_correction
+3,contact_height_median_um,contact height,um,0.048016408350180846,0.19165641955162213,0.0222243007211258,0.15472221517692836,paired_map_QC; diagnostic_not_force_correction
+3,approach_snap_detected_fraction,approach snap-detected fraction,fraction,0.048016408350180846,0.19165641955162213,-0.2890625,-2.012409339028926,paired_map_QC; diagnostic_not_force_correction
+3,approach_snap_distance_median_nm,approach snap distance,nm,0.048016408350180846,0.19165641955162213,82.69798984709847,575.7308785720053,paired_map_QC; diagnostic_not_force_correction
+3,retract_detachment_piezo_travel_median_nm,retract detachment travel,nm,0.048016408350180846,0.19165641955162213,-11.949309767701408,-83.1892845715784,paired_map_QC; diagnostic_not_force_correction
+3,retract_pull_off_force_median_nN,retract pull-off,nN,0.048016408350180846,0.19165641955162213,0.3816579217038979,2.6570446389666413,paired_map_QC; diagnostic_not_force_correction
+3,branch_contact_height_difference_median_nm,approach-retract contact-height difference,nm,0.048016408350180846,0.19165641955162213,-0.9436981380784157,-6.569883489879222,paired_map_QC; diagnostic_not_force_correction
+4,map_contact_invOLS_median_nm_per_V,InvOLS,nm/V,0.04925536853190737,0.1968899240691211,0.1674780508175857,1.1344095574925892,paired_map_QC; diagnostic_not_force_correction
+4,terminal_load_median_nN,terminal load,nN,0.04925536853190737,0.1968899240691211,-0.0340788667483487,-0.23083258945944105,paired_map_QC; diagnostic_not_force_correction
+4,far_slope_median_pN_per_100nm,far slope,pN/100 nm,0.04925536853190737,0.1968899240691211,1.1616084722533575,7.8681340423757025,paired_map_QC; diagnostic_not_force_correction
+4,contact_height_median_um,contact height,um,0.04925536853190737,0.1968899240691211,-0.006341580944232206,-0.04295458418360399,paired_map_QC; diagnostic_not_force_correction
+4,approach_snap_detected_fraction,approach snap-detected fraction,fraction,0.04925536853190737,0.1968899240691211,-0.1328125,-0.8996030740684041,paired_map_QC; diagnostic_not_force_correction
+4,approach_snap_distance_median_nm,approach snap distance,nm,0.04925536853190737,0.1968899240691211,85.47682350742923,578.9757228339635,paired_map_QC; diagnostic_not_force_correction
+4,retract_detachment_piezo_travel_median_nm,retract detachment travel,nm,0.04925536853190737,0.1968899240691211,2.6970215772072947,18.268227024447985,paired_map_QC; diagnostic_not_force_correction
+4,retract_pull_off_force_median_nN,retract pull-off,nN,0.04925536853190737,0.1968899240691211,0.17535949308892085,1.1877943646107878,paired_map_QC; diagnostic_not_force_correction
+4,branch_contact_height_difference_median_nm,approach-retract contact-height difference,nm,0.04925536853190737,0.1968899240691211,-0.24206489815787435,-1.639622223110618,paired_map_QC; diagnostic_not_force_correction
+5,map_contact_invOLS_median_nm_per_V,InvOLS,nm/V,0.04992569032215696,0.1997452400244206,0.06443796019228643,0.4301038170275106,paired_map_QC; diagnostic_not_force_correction
+5,terminal_load_median_nN,terminal load,nN,0.04992569032215696,0.1997452400244206,-0.011477680198236584,-0.07661003000640555,paired_map_QC; diagnostic_not_force_correction
+5,far_slope_median_pN_per_100nm,far slope,pN/100 nm,0.04992569032215696,0.1997452400244206,-0.6938221525787693,-4.63105218215915,paired_map_QC; diagnostic_not_force_correction
+5,contact_height_median_um,contact height,um,0.04992569032215696,0.1997452400244206,8.971140602653804e-05,0.0005987963934267691,paired_map_QC; diagnostic_not_force_correction
+5,approach_snap_detected_fraction,approach snap-detected fraction,fraction,0.04992569032215696,0.1997452400244206,-0.0078125,-0.05214606515321785,paired_map_QC; diagnostic_not_force_correction
+5,approach_snap_distance_median_nm,approach snap distance,nm,0.04992569032215696,0.1997452400244206,0.2047067913048881,1.3663556706164308,paired_map_QC; diagnostic_not_force_correction
+5,retract_detachment_piezo_travel_median_nm,retract detachment travel,nm,0.04992569032215696,0.1997452400244206,-25.518796240225754,-170.3302158559364,paired_map_QC; diagnostic_not_force_correction
+5,retract_pull_off_force_median_nN,retract pull-off,nN,0.04992569032215696,0.1997452400244206,0.072759256727007,0.4856459445486351,paired_map_QC; diagnostic_not_force_correction
+5,branch_contact_height_difference_median_nm,approach-retract contact-height difference,nm,0.04992569032215696,0.1997452400244206,-0.4174711247175391,-2.7864929880458154,paired_map_QC; diagnostic_not_force_correction

@@ -31,6 +31,46 @@ The main conclusion is evidence-bounded: separation-resolved velocity difference
 
 At 30 wt%, the first two 2 um/s maps are a roughly 6.7 nN low-load stratum. The later 2, 1, 1 and 4 um/s maps are a roughly 18.5 nN high-load stratum. Cross-stratum differences are not used as velocity contrasts.
 
+## Measured force-distance slices
+
+The following values are measured approach-force summaries, not PB/hydrodynamic fit components and not a zero-speed extrapolation. Each input value is the valid-pixel median of one map at the stated separation; where multiple eligible maps exist at the same concentration and speed, the table reports the median of those map medians. Ten wt% is excluded. The 30 wt% row uses only the approximately 18.5 nN high-load stratum; the previously quoted approximately 665 pN value at 2 um/s and 50 nm came from the incompatible low-load stratum, whereas the comparable high-load value is 579.4 pN.
+
+The primary table uses `force_linear_drift_corrected_pN`, obtained after subtracting a fitted far-field linear baseline:
+
+| D (nm) | wt% / load stratum | 1 um/s (pN) | 2 um/s (pN) | 4 um/s (pN) |
+|---:|:---|---:|---:|---:|
+| 25 | 0 | 1901.8 | 1930.9 | 1819.7 |
+| 25 | 20 | 1942.2 | 1999.2 | 1935.6 |
+| 25 | 30 high-load | 1683.7 | 1897.4 | 1612.6 |
+| 25 | 40 | 1987.3 | 2059.9 | 1893.9 |
+| 50 | 0 | 514.0 | 572.6 | 447.2 |
+| 50 | 20 | 551.6 | 610.2 | 463.8 |
+| 50 | 30 high-load | 388.4 | 579.4 | 345.3 |
+| 50 | 40 | 639.7 | 699.8 | 509.7 |
+| 100 | 0 | 35.7 | 57.5 | 13.2 |
+| 100 | 20 | 76.1 | 60.3 | 12.0 |
+| 100 | 30 high-load | 21.2 | 62.9 | 29.4 |
+| 100 | 40 | 103.6 | 118.2 | 39.4 |
+| 150 | 0 | -12.1 | -3.3 | -21.0 |
+| 150 | 20 | 25.6 | 0.8 | -20.6 |
+| 150 | 30 high-load | 3.7 | 18.4 | 5.8 |
+| 150 | 40 | 34.9 | 35.9 | -2.6 |
+| 200 | 0 | -15.0 | -8.3 | -25.5 |
+| 200 | 20 | 23.1 | -12.5 | -27.3 |
+| 200 | 30 high-load | -4.2 | 13.7 | -0.1 |
+| 200 | 40 | 28.3 | 20.3 | -10.8 |
+
+For zero-reference sensitivity, the same 50 nm slices after subtracting only a far-field constant, while retaining the far-field slope, are:
+
+| wt% / load stratum | 1 um/s (pN) | 2 um/s (pN) | 4 um/s (pN) |
+|:---|---:|---:|---:|
+| 0 | 547.8 | 595.6 | 501.6 |
+| 20 | 285.5 | 507.5 | 429.8 |
+| 30 high-load | 146.4 | 511.7 | 185.8 |
+| 40 | 439.6 | 688.6 | 444.9 |
+
+Both tables use the reconstructed concentration-specific sensitivity and calibrated cantilever-1 spring constant. They still contain equilibrium interaction, residual hydrodynamic force, acquisition history and other systematics. The large difference between the line-corrected and constant-referenced branches shows that the far-field slope cannot be silently identified as purely instrumental drift. Because the primary table has had that slope removed, it is not an absolute force-distance relation.
+
 ## Same-pixel event and contact comparisons
 
 All differences are `second map - first map` at the same physical raster coordinate after undoing serpentine row reversal. Spatial-block confidence intervals use 4x4 pixel blocks and quantify only within-area heterogeneity. Snap differences require a detected event in both maps, so their paired `n` and interval are detection-conditioned; missing/no-snap pixels are not silently assigned zero distance.
