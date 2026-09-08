@@ -1,0 +1,262 @@
+{
+  "created_utc": "2026-09-08T23:55:38.573182+00:00",
+  "purpose": "reproducible descriptive quality comparison; no primary fit files modified",
+  "definitions": {
+    "MAD": "1.4826*median(abs(x-median(x)))",
+    "group_aggregation": "derive each metric per map, then median across maps",
+    "sample_CV": "100*sample_standard_deviation(ddof=1)/mean",
+    "relative_fit_residual_percent": "100*RMSE/force_signal",
+    "force_signal": "max(force)-median(last max(3,floor(N/5)) fitted distance bins)",
+    "spatial_MAD": "MAD across pixels separately at each distance, then median across distance bins",
+    "reference_subtracted_spatial_MAD": "subtract each pixel median at 200-250 nm, then MAD across pixels at each distance, then median across distance bins",
+    "fit_R2_RMSE": "unweighted force residuals; optimizer uses saved spatial-MAD weights and soft_l1 loss"
+  },
+  "fit_method": "reuse fit_08_09_26_water.fit_one, nonlinear PB Derjaguin model, line baseline, 25-250 nm, 46 bins, saved weights",
+  "input_sha256": {
+    "analysis/water_08_09_26_results/all_pixel_force_curves.npz": "f97f034ceb618fab844f0a257361c4fe34d3742386cea37c4a4058b5b604f90b",
+    "analysis/water_08_09_26_results/map_inventory_QC.csv": "016cde74cbcc924316951a5f2b77d88d9ec04d5055d8e4a1d2569ed03748c856",
+    "analysis/water_08_09_26_results/pixel_QC.csv": "ca28066050f08f6b119c4c23d656690d98857fc7b77ffaef9338cfdbdd3dc767",
+    "analysis/water_08_09_26_results/surface_fit/map_median_fit_inputs.csv": "3e7f1987db7331abfb53039ec2883e6749820bed72e78b3e4c32075d682e89c0",
+    "analysis/water_08_09_26_results/surface_fit/fit_parameters_per_map.csv": "99f76c4b76c3f4f0f98cbb5685ff3cd4c3862ab5df1251e39220be5712da184a",
+    "analysis/water_08_09_26_results/surface_fit/fit_parameters_all_variants.csv": "5e37af7f2d43896139d1eb4e5273e1794d95885b1e9d1ea0e3a3e86f23f65653",
+    "analysis/water_08_09_26_results/surface_fit/parameter_sensitivity.csv": "6b857b6f234715068788d5680005a9a8dc9d8d68d00d80c41bc3eaac24482c10",
+    "analysis/water_08_09_26_results/surface_fit/provenance.json": "a894d55eacf13d30ecc390ff258cdef10e2e940fd5c1fca15535c72f8c7eacab"
+  },
+  "raw_capture_identity": [
+    {
+      "acquisition_order": 1,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.16.47.619.jpk-force-map",
+      "sha256": "5619b7286869401f1bb04e5fcf13dc0c8f962c69e4f3a1154d00fe6a83b377dd"
+    },
+    {
+      "acquisition_order": 2,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.18.11.440.jpk-force-map",
+      "sha256": "c4cfb46d414b4aaea8e55a48fce0361f1fcffb9dedd3598f2fc9736d643cd079"
+    },
+    {
+      "acquisition_order": 3,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.20.29.129.jpk-force-map",
+      "sha256": "e54bbb688df107ca8718b6992eaba9ba4bc751d348428f4bdd4a99d180ecac87"
+    },
+    {
+      "acquisition_order": 4,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.21.06.677.jpk-force-map",
+      "sha256": "3447b1a8cd387a5e299b31c96085dc6e661216788245dd67dfd7f0bc372d2d8b"
+    },
+    {
+      "acquisition_order": 5,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.21.58.335.jpk-force-map",
+      "sha256": "800fe9a2ce23d0a312d788ee683c6a9b2de6c34e3fb2c405db7d214e540a1780"
+    },
+    {
+      "acquisition_order": 6,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.24.49.530.jpk-force-map",
+      "sha256": "3952f968b4a09ef3c8eb206c4296502375e7beeb07046dbb78e2dcd07a26b1bf"
+    },
+    {
+      "acquisition_order": 7,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.26.16.096.jpk-force-map",
+      "sha256": "f98f811b47fa733083d56aaf69145580d60d1bbe8832f516ea87c1c001473c0d"
+    },
+    {
+      "acquisition_order": 8,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.30.36.270.jpk-force-map",
+      "sha256": "0c10a0f5b8e556a344290bb021936a3f5c981dec4b30be7023f077f4b7206823"
+    },
+    {
+      "acquisition_order": 9,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.33.30.403.jpk-force-map",
+      "sha256": "ad91314cd3fd910f35c5d5f9472409e1640f894f5db8e8a6308bfd0db7e1e6f7"
+    },
+    {
+      "acquisition_order": 10,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.36.43.160.jpk-force-map",
+      "sha256": "9716fbed4170c075688266146f10bee77c8729602c6ba83ea0679da31994a5b1"
+    },
+    {
+      "acquisition_order": 11,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.40.44.079.jpk-force-map",
+      "sha256": "6226664169d67c82006fcdee97f47f33035c10d7202b351284a83109c2fe5aa9"
+    },
+    {
+      "acquisition_order": 12,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.43.36.372.jpk-force-map",
+      "sha256": "421496dfcd808185334ca95c90deb55e11a9fededa788d5de55b0abe2803efc9"
+    },
+    {
+      "acquisition_order": 13,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.49.51.441.jpk-force-map",
+      "sha256": "1bc429188f48017d7529c6192b0e9cd15d102b5be9a6dadbd71c5c95bcb3fef0"
+    },
+    {
+      "acquisition_order": 14,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-15.54.49.336.jpk-force-map",
+      "sha256": "7a642cad99b9d5bf0835aa33e698aca2037e6a4f0c934914955ca53e179ffed4"
+    },
+    {
+      "acquisition_order": 15,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.00.06.231.jpk-force-map",
+      "sha256": "7f1ffd2c4654b3554dd9624198bcc9b3efe9f7a89cbb1371a706fc61876e3e31"
+    },
+    {
+      "acquisition_order": 16,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.06.40.516.jpk-force-map",
+      "sha256": "a6bb8acdeeaf80644f388493ba46fda1c7c53f9b506ac28440c8399c6b699854"
+    },
+    {
+      "acquisition_order": 17,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.12.56.907.jpk-force-map",
+      "sha256": "7bc05e5bc675b0439438c979a800b540563df7e04ee8df54b5a4f4da29b8655e"
+    },
+    {
+      "acquisition_order": 18,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.18.04.427.jpk-force-map",
+      "sha256": "e357da9074d1176a7fb12f16f86774a130b212becda936e74c71dd62839449aa"
+    },
+    {
+      "acquisition_order": 19,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.23.55.544.jpk-force-map",
+      "sha256": "cee4a298355aa05fbd4f8d54139fa965560b3395d97f745373f8557bcd194c08"
+    },
+    {
+      "acquisition_order": 20,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.25.31.280.jpk-force-map",
+      "sha256": "1e76a3615f0c473e073709d54152ab3ff2085f0bd893025ed6c2310288d87d48"
+    },
+    {
+      "acquisition_order": 21,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.27.52.284.jpk-force-map",
+      "sha256": "e9308a1d0983ac046447a0418efab760c301ce3221a34ab182cc4f856b0a6596"
+    },
+    {
+      "acquisition_order": 22,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.28.41.781.jpk-force-map",
+      "sha256": "5dc5c8d087d55c2e6961de822d32e17b5d30eecf234c45d34a4533209d0a4b6c"
+    },
+    {
+      "acquisition_order": 23,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.29.38.863.jpk-force-map",
+      "sha256": "2c4288190a5fae713befbe26f94a08f8a334cfd2d06daa3da279f81b466804c7"
+    },
+    {
+      "acquisition_order": 24,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.32.05.092.jpk-force-map",
+      "sha256": "256c0f4d647b0f91954aa72811453e21d711b13a153deb1df41bcdac451dd998"
+    },
+    {
+      "acquisition_order": 25,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.33.27.648.jpk-force-map",
+      "sha256": "ef4ace96b54261ef1f50ccb7294ef754fe7255be2731787fe7327e06eb435011"
+    },
+    {
+      "acquisition_order": 26,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.35.50.129.jpk-force-map",
+      "sha256": "c92a583e51b79a8dc80ff3686e911b431b562cb951251477217ee4090636717e"
+    },
+    {
+      "acquisition_order": 27,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.37.03.865.jpk-force-map",
+      "sha256": "6c4603b499f12b8b8c84d821eeda154113a4627a732c4cbcf6d5e0aa03460d59"
+    },
+    {
+      "acquisition_order": 28,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.38.22.628.jpk-force-map",
+      "sha256": "6dd7c0b5a17748f2a958caa9b3ca39e1ac3f9b2962d4db3ade675957d1a04072"
+    },
+    {
+      "acquisition_order": 29,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.39.43.669.jpk-force-map",
+      "sha256": "60b19c8305b7f4f8ceb206ead60778485f6fcf717ddb8c23572d1ae0c377c6cc"
+    },
+    {
+      "acquisition_order": 30,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.40.42.235.jpk-force-map",
+      "sha256": "720401fa2b28ebfa3d5099b15dbbeb9ddbc7b5ca49fe81038d5f80bc8a68cca1"
+    },
+    {
+      "acquisition_order": 31,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.43.14.548.jpk-force-map",
+      "sha256": "59d3323480a4350b03a0ae21d8c0e4e883e13c145336f0caf1d61af512f8862d"
+    },
+    {
+      "acquisition_order": 32,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.44.14.124.jpk-force-map",
+      "sha256": "491a847d1339995aceb26aecca7e13e0740b58616fd04c87384ca620512522cd"
+    },
+    {
+      "acquisition_order": 33,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.45.32.335.jpk-force-map",
+      "sha256": "79557a8f4acd8af06902aa0d3940e1ff451b49bebdc59d9736e90c66a73c98ca"
+    },
+    {
+      "acquisition_order": 34,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.47.50.251.jpk-force-map",
+      "sha256": "15bdb693c8ab37abf198fbf61f57b9d4ff8d23088f14eb03f90ef81b2cda2fb7"
+    },
+    {
+      "acquisition_order": 35,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.50.17.571.jpk-force-map",
+      "sha256": "da7822b0073d574040b6b3ebc75b6a5cdfc2eb5eb335bcd7e07ff93daab27f8a"
+    },
+    {
+      "acquisition_order": 36,
+      "source": "raw/keeper_6f30d59535114f89b568/08-09-26/map-data-2026.09.08-16.51.34.172.jpk-force-map",
+      "sha256": "d183fc91e52fa2cffdf3cad90dcc60c93fde35e208436997e1dd7e8fafbe5830"
+    }
+  ],
+  "code_sha256": {
+    "analysis/compare_08_09_26_water_quality.py": "72753e7bd17f8d71d169c31533fc968bd04c95305fa071e5bc2c72366e3d4e8e",
+    "analysis/fit_08_09_26_water.py": "ff9cb5fb2d7de627ea8cbbe8af5027d5a8702eac6b0f0a866b5a7a56260fea4e",
+    "analysis/fit_glycerol_surface_forces.py": "560e2556b6289a9433d694ef42836728e71eeb86589c88dfe049513fa4a79b4e",
+    "analysis/analyze_08_09_26_fixed_pixel.py": "5d3c6a06197bd70c635c2bfc7556e0d4402be86d7d9f9db0429e5a82e4bac6a3"
+  },
+  "model_constants": {
+    "model": "nonlinear_pb_derjaguin",
+    "probe_radius_m": 4.54685e-06,
+    "temperature_C": 25.6,
+    "epsilon_r": 78.5,
+    "Hamaker_J": 2.4e-21
+  },
+  "independence_boundary": [
+    "Maps, pixels, and adjacent distance bins are serially or spatially correlated and are not treated as independent experiments.",
+    "MAD is 1.4826*median(abs(x-median(x))). Spatial summaries compute MAD across pixels at each distance, then median across distance bins, then median across maps for group summaries.",
+    "Per-pixel reference subtraction removes each curve's median force over 200-250 nm before spatial MAD; it separates constant curve offsets from shape variation but does not identify the remainder as independent random noise.",
+    "Primary-window and common-window fits answer different quality questions. Their force-signal values must not be interpreted as force changes at a fixed distance.",
+    "Fit pass and numerical consistency do not establish equilibrium PB validity, a causal liquid change, or experimental confidence intervals."
+  ],
+  "validation": {
+    "input_rows": {
+      "maps": 36,
+      "pixels": 2304,
+      "fit_inputs": 10800,
+      "all_primary_and_variant_fits": 216
+    },
+    "output_rows": {
+      "common_25_250_fit_parameters.csv": 18,
+      "common_25_250_fit_predictions.csv": 828,
+      "quality_per_map.csv": 36,
+      "quality_group_summary.csv": 2,
+      "quality_six_map_block_summary.csv": 6,
+      "quality_phase_speed_summary.csv": 6,
+      "common_25_250_trend_diagnostics.csv": 8,
+      "method_sensitivity_summary.csv": 10,
+      "spatial_spread_by_distance.csv": 2520,
+      "per_pixel_200_250nm_reference.csv": 4608,
+      "baseline_comparison_per_map.csv": 36,
+      "selected_map_diagnostics.csv": 13
+    },
+    "all_maps_capture_complete": true,
+    "all_maps_instrument_failure_flag_count_zero": true,
+    "common_25_250_all_46_bins": true,
+    "common_25_250_quality_pass_count": 18,
+    "parent_surface_fit_manifest_sha256_before": "b8660313611778775a227efc597ba0ae8fb8662541dbc3306e2038edb54e236f",
+    "parent_manifest_hash_scope": "execution-time non-mutation guard only; the parent manifest may later be regenerated to index this comparison directory, so this is not a current-package assertion",
+    "parent_surface_fit_manifest_sha256_after": "b8660313611778775a227efc597ba0ae8fb8662541dbc3306e2038edb54e236f"
+  },
+  "software": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1"
+  }
+}

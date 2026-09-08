@@ -1,0 +1,9 @@
+scope,nominal_speed_um_per_s,parameter,n_maps,spearman_rho,inference_boundary
+maps_19_36_all_speeds,,lambda_D_apparent_nm,18,-0.17440660474716205,descriptive_serial_association; adjacent maps are not independent experiments
+maps_19_36_within_speed,1.0,lambda_D_apparent_nm,6,-0.08571428571428573,descriptive_serial_association; adjacent maps are not independent experiments
+maps_19_36_within_speed,2.0,lambda_D_apparent_nm,6,-0.028571428571428574,descriptive_serial_association; adjacent maps are not independent experiments
+maps_19_36_within_speed,4.0,lambda_D_apparent_nm,6,-0.5428571428571429,descriptive_serial_association; adjacent maps are not independent experiments
+maps_19_36_all_speeds,,surface_potential_magnitude_apparent_mV,18,0.06501547987616099,descriptive_serial_association; adjacent maps are not independent experiments
+maps_19_36_within_speed,1.0,surface_potential_magnitude_apparent_mV,6,0.2571428571428572,descriptive_serial_association; adjacent maps are not independent experiments
+maps_19_36_within_speed,2.0,surface_potential_magnitude_apparent_mV,6,-0.08571428571428573,descriptive_serial_association; adjacent maps are not independent experiments
+maps_19_36_within_speed,4.0,surface_potential_magnitude_apparent_mV,6,-0.08571428571428573,descriptive_serial_association; adjacent maps are not independent experiments

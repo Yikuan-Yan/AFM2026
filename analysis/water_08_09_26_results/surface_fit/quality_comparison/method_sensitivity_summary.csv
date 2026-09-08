@@ -1,0 +1,11 @@
+phase,variant,n_maps,fit_quality_pass_count,lambda_relative_change_median_percent,lambda_absolute_relative_change_median_percent,potential_relative_change_median_percent,potential_absolute_relative_change_median_percent,reference
+maps_1_18,constant_baseline,18,8,38.934803768753625,38.934803768753625,-8.979228810741802,13.130819726871707,each variant relative to the same map primary fit
+maps_1_18,lower_plus_10nm,18,0,13.769662819416938,18.56166171274838,-15.136327720324838,23.030202310502535,each variant relative to the same map primary fit
+maps_1_18,upper_200nm,18,0,-1.8011613003662053,5.397410963558579,2.7206039673262183,7.00613621502505,each variant relative to the same map primary fit
+maps_1_18,common_80_250nm,18,0,18.0496834088972,22.150619300688923,-18.03114464504571,27.724391497572462,each variant relative to the same map primary fit
+maps_1_18,no_slip_hydrodynamic,18,0,-10.227512013521538,10.227512013521538,5.93850752317574,5.93850752317574,each variant relative to the same map primary fit
+maps_19_36,constant_baseline,18,18,14.771240278159103,14.771240278159103,-6.4481987902363365,6.4481987902363365,each variant relative to the same map primary fit
+maps_19_36,lower_plus_10nm,18,17,6.683231237021115,6.683231237021115,-7.085258505021691,7.085258505021691,each variant relative to the same map primary fit
+maps_19_36,upper_200nm,18,18,0.33066403571246905,0.35617697967673667,-0.1032736155164804,0.112563827417278,each variant relative to the same map primary fit
+maps_19_36,common_80_250nm,18,0,-11.743142070458912,24.15889303266221,232.8496969587003,232.8496969587003,each variant relative to the same map primary fit
+maps_19_36,no_slip_hydrodynamic,18,18,-2.4864732009632515,2.4864732009632515,-0.22597472829744003,0.24153425191749678,each variant relative to the same map primary fit

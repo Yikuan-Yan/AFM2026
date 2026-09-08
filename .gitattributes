@@ -5,3 +5,7 @@
 
 # Matplotlib SVG path data commonly carries spaces before line breaks.
 *.svg whitespace=-blank-at-eol,-blank-at-eof
+
+# Preserve the byte-level provenance of the 08 September derived package.
+/analysis/water_08_09_26_results/** -text whitespace=cr-at-eol
+/analysis/water_08_09_26_results/**/*.svg whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof

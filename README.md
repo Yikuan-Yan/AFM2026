@@ -12,6 +12,8 @@ Reproducible analysis code, derived results, quality-control figures and experim
 - `analysis/analyze_27_08_26_full_palindrome.py`: full 29-map reconstruction of the overlapping map1–3 liquid-refresh test and map3–5 no-refresh test, including time-aware velocity models, contact/retract-state diagnostics and explicit handling of the missing final 0.1 µm/s map.
 - `analysis/analyze_27_08_26_palindrome_distribution_tests.py`: same-pixel palindrome-mean force distributions with 64-pixel, sixteen 2×2 spatial-tile and n=3 block-level paired t-tests, including clock-center and baseline sensitivity.
 - `analysis/plot_27_08_26_fixed_pixel_chronology.py`: chronological force-distance overlay and 20/50/100/200 nm force slices for one fixed physical 8×8 map position.
+- `analysis/download_08_09_26_keeper.py`, `analysis/analyze_08_09_26_fixed_pixel.py` and `analysis/assess_08_09_26_refresh.py`: verified acquisition of the 36-map water experiment, cantilever-2 force reconstruction, actual-time chronology and blind liquid-refresh candidate diagnostics.
+- `analysis/fit_08_09_26_water.py` and `analysis/compare_08_09_26_water_quality.py`: per-map nonlinear PB fits, parameter sensitivity and the within/between-group quality comparison for the same 08-09-26 experiment.
 - `analysis/plot_zero_wt_all_fd_curves.py`: all measured 0 wt% approach curves, split into three speed-highlight figures with pointwise median and interquartile range.
 - `analysis/analyze_zero_wt_distribution_separation.py`: spatial-block bootstrap, simultaneous confidence bands and exact functional sign-flip tests for the three 0 wt% maps.
 - `analysis/analyze_zero_wt_classical_distribution_tests.py`: paired t/Wilcoxon, marginal Welch/Mann-Whitney/KS and three-group repeated-measures tests for the same maps.
@@ -32,6 +34,9 @@ The joint equal-silica sphere-plane PB fits, excluding 10 wt%, give model-condit
 
 The current scientific interpretation and its limitations are documented in:
 
+- [`analysis/water_08_09_26_results/REPORT.md`](analysis/water_08_09_26_results/REPORT.md)
+- [`analysis/water_08_09_26_results/surface_fit/REPORT.md`](analysis/water_08_09_26_results/surface_fit/REPORT.md)
+- [`analysis/water_08_09_26_results/surface_fit/DATA_QUALITY_COMPARISON.md`](analysis/water_08_09_26_results/surface_fit/DATA_QUALITY_COMPARISON.md)
 - [`analysis/palindrome_27_08_26_full_results/REPORT.md`](analysis/palindrome_27_08_26_full_results/REPORT.md)
 - [`analysis/palindrome_27_08_26_distribution_results/REPORT.md`](analysis/palindrome_27_08_26_distribution_results/REPORT.md)
 - [`analysis/palindrome_27_08_26_pilot_results/REPORT.md`](analysis/palindrome_27_08_26_pilot_results/REPORT.md)
@@ -42,6 +47,8 @@ The current scientific interpretation and its limitations are documented in:
 - [`analysis/velocity_systematics_results/REPORT.md`](analysis/velocity_systematics_results/REPORT.md)
 - [`analysis/surface_force_results/REPORT.md`](analysis/surface_force_results/REPORT.md)
 - [`analysis/results/REPORT.md`](analysis/results/REPORT.md)
+
+The 08-09-26 water series contains 36 complete 8×8 maps. Its force reconstruction uses the user-corrected cantilever-2 `k = 0.2736 ± 0.0063 N/m` and the measured global water InvOLS of `81.9545 nm/V`; the headers incorrectly contain cantilever-3 stiffness. The latter 18 maps provide a usable near-field repulsive branch and pass the stated PB parameter screening. A separate common 25–250 nm diagnostic gives group medians of `lambda_D = 12.315 nm` and surface-potential magnitude `49.590 mV`, without a sustained trend across successive six-map groups. These are finite-speed, model-conditioned values, using the user-authorized `R = 4.54685 µm` and assumed `T = 25.6 °C`. Neither group constrains the two parameters reliably in the shared 80–250 nm tail, so the comparison does not quantify a true before/after change in Debye length or potential. The group-quality report preserves this distinction and the original primary fits.
 
 The future concentration range is 0–99.5 wt% glycerol. At 25.6 °C the Cheng viscosity estimate rises from `0.8806 mPa s` in water to `774.9 mPa s` at 99.5 wt%, so a fixed approach speed of 0.1 or 0.2 µm/s cannot make hydrodynamic drainage negligible across the range. The protocol records concentration-dependent `eta U` speed design, finite-distance zero-force semantics and the requirement that the reported 20–200 nm equilibrium force be obtained from a map/block/session-supported `U -> 0` intercept rather than from one finite-speed curve.
 
@@ -75,4 +82,16 @@ python analysis/analyze_27_08_26_full_palindrome.py
 python analysis/analyze_27_08_26_palindrome_distribution_tests.py
 ```
 
+For the 08-09-26 series, the download step restores and verifies the excluded raw archive. The final comparison can also run directly from the committed derived inputs:
+
+```bash
+python -X utf8 analysis/download_08_09_26_keeper.py
+python -X utf8 analysis/analyze_08_09_26_fixed_pixel.py
+python -X utf8 analysis/assess_08_09_26_refresh.py
+python -X utf8 analysis/fit_08_09_26_water.py --workers 4
+python -X utf8 analysis/compare_08_09_26_water_quality.py
+```
+
 Each result directory contains an `artifact_manifest.sha256` file for checking the primary committed derived artifacts. The supplemental 0 wt% analysis has its own `zero_wt_distribution_analysis_manifest.sha256` so it can be verified independently.
+
+The 08-09-26 top-level manifest uses repository-relative paths and covers its five scripts and the complete derived package. Its `surface_fit/` and `quality_comparison/` manifests use paths relative to their own directories. These manifests describe the committed snapshot; regenerating outputs or documentation requires refreshing the enclosing manifests.

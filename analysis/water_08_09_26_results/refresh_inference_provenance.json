@@ -1,0 +1,22 @@
+{
+  "claim_status": "blind_hypothesis_before_user_discloses_operations",
+  "primary_candidate_between_maps": [
+    18,
+    19
+  ],
+  "secondary_candidate_between_maps": [
+    12,
+    13
+  ],
+  "secondary_scope": "liquid level or optical/contact-response change; actual liquid replacement not uniquely identified",
+  "snap_summary_filter": "approach_snap_detected is True and distance finite; avoids unconfirmed detector candidates",
+  "script_sha256": "86347fa3bc18078845f290ae8127ca3cac78433e5c5d75d7e18eeb593cef127f",
+  "input_hashes": {
+    "map_inventory_QC.csv": "016cde74cbcc924316951a5f2b77d88d9ec04d5055d8e4a1d2569ed03748c856",
+    "pixel_QC.csv": "ca28066050f08f6b119c4c23d656690d98857fc7b77ffaef9338cfdbdd3dc767",
+    "fixed_pixel_row3_col3_force_slices.csv": "727193b417a87c2dafa6cbd373f7b389c0d1fa25975a0173eced0036acb27bf9",
+    "adjacent_map_changes.csv": "3c3ceaaf4894f6f0999b88db7fd999720e12d414dd8e55678f25edb76c681fee",
+    "all_pixel_force_curves.npz": "f97f034ceb618fab844f0a257361c4fe34d3742386cea37c4a4058b5b604f90b",
+    "provenance.json": "7238dd43fa05294ac74690ea06d8094d8b808a143c2292860457e6a353ee4928"
+  }
+}
