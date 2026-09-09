@@ -1,0 +1,13 @@
+observed_force_common_scale_factor,spring_constant_interpretation,map_order,lambda_D_nm_median,zeta_magnitude_mV_median,baseline_pN_median,rmse_pN_median,uncertainty_scope
+0.9301729931739765,k_minus_1SD,2,24.54371275602257,25.75,-41.11754429193731,10.06082762784675,common_force_scale_only; InvOLS distance-axis and contact-zero handled separately
+0.9301729931739765,k_minus_1SD,3,17.320508075688775,25.0,-28.995583234374003,13.139767458390256,common_force_scale_only; InvOLS distance-axis and contact-zero handled separately
+0.9301729931739765,k_minus_1SD,4,13.23244094928074,20.5,-28.982813333383298,12.94209224886217,common_force_scale_only; InvOLS distance-axis and contact-zero handled separately
+0.9301729931739765,k_minus_1SD,5,11.472483074052871,16.0,-13.999055459804069,7.413931333503744,common_force_scale_only; InvOLS distance-axis and contact-zero handled separately
+1.0,nominal_k,2,23.77817258228512,26.5,-45.218521702296556,10.562583624610028,common_force_scale_only; InvOLS distance-axis and contact-zero handled separately
+1.0,nominal_k,3,17.320508075688775,25.0,-29.62828311132889,14.339562921873224,common_force_scale_only; InvOLS distance-axis and contact-zero handled separately
+1.0,nominal_k,4,13.44207608814922,22.0,-32.21325628881233,13.702084730759754,common_force_scale_only; InvOLS distance-axis and contact-zero handled separately
+1.0,nominal_k,5,11.293564611858205,16.0,-15.13770495050099,7.9524456319111465,common_force_scale_only; InvOLS distance-axis and contact-zero handled separately
+1.0698270068260236,k_plus_1SD,2,24.54371275602257,28.0,-48.6474890220401,11.284180212825897,common_force_scale_only; InvOLS distance-axis and contact-zero handled separately
+1.0698270068260236,k_plus_1SD,3,17.599325649150288,26.5,-32.83272801265553,14.999127219761808,common_force_scale_only; InvOLS distance-axis and contact-zero handled separately
+1.0698270068260236,k_plus_1SD,4,13.44207608814922,22.0,-30.870817998608633,14.473489799215438,common_force_scale_only; InvOLS distance-axis and contact-zero handled separately
+1.0698270068260236,k_plus_1SD,5,11.841840586928083,17.5,-15.154555882500741,8.537588352537233,common_force_scale_only; InvOLS distance-axis and contact-zero handled separately

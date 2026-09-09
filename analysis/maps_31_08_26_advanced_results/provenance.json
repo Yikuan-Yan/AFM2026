@@ -1,0 +1,159 @@
+{
+  "analysis": "advanced model-light, spatial, contact-zero, identifiability, sphere-plane PB, joint-model, residual and time-law analysis of 31-08-26 map2--5",
+  "claim_status": "apparent_model_conditioned_same_pixel_diagnostic",
+  "input_hashes": {
+    "analysis/maps_31_08_26_results/pixel_force_curves.npz": "b07227b24efc0fbcc31c91d29d304ef8f657c161ac8063138bece5b32c9a1ae4",
+    "analysis/maps_31_08_26_results/pixel_QC.csv": "caab57f04dc9220d6e1766c10c8efb834dd8ea81a92ce7f3f9559a80bbd4c149",
+    "analysis/maps_31_08_26_results/map_inventory_QC.csv": "377dd8cd43b9e752e2136cf410ca8e2fc034fed0a8175125798e75d8cb92cbcc",
+    "analysis/maps_31_08_26_results/provenance.json": "3d219e777f2dc176eb669c45d7bca237b7c4a2895fdb394209491764ab29716d",
+    "analysis/maps_31_08_26_colloid_colloid_results/per_curve_colloid_colloid_fits.csv": "927378ab8b3d5703fdb39bcf1ac2765fdec17e20ade1323819701c05b3a3a680",
+    "analysis/palindrome_27_08_26_full_results/calibration_summary.csv": "109b736793e70267155142a4729050cacdf52656ca6dcbb1f7e0e1bb35b35c6c"
+  },
+  "raw_map_hashes": {
+    "31-08-26/map-data-2026.08.31-15.01.59.514.jpk-force-map": "6d561d5d1469d39c19a90a6a4a1e9d12e7641bbb930bc69f68b2ef119ce8fde7",
+    "31-08-26/map-data-2026.08.31-15.29.09.174.jpk-force-map": "3821578e6f21af4f53b4614b3be963423350ee4dbc8d70380eb4743a7890f8b3",
+    "31-08-26/map-data-2026.08.31-15.55.19.495.jpk-force-map": "17600e26d8d99dcaf6f28bdd5a03625f46a7248c4a3b12ee03948aa3f0275cee",
+    "31-08-26/map-data-2026.08.31-16.20.38.892.jpk-force-map": "8c11e177eac08d8fa81bdb7a0f30e75af5eb08c374c06ab78e20249af8864a3e"
+  },
+  "temperature_C": 25.6,
+  "cantilever": {
+    "inferred_upstream": "D5",
+    "spring_constant_N_per_m": 0.3113401731578352,
+    "spring_repeatability_sd_N_per_m": 0.0217399523963075,
+    "global_liquid_InvOLS_nm_per_V": 68.28960406065333
+  },
+  "experimental_pairing": {
+    "maps": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "relative_times_min": [
+      0.0,
+      27.161,
+      53.33301666666667,
+      78.6563
+    ],
+    "curves_per_map": 64,
+    "physical_coordinates": "exactly paired upstream row/column and source-coordinate audit"
+  },
+  "primary_model": {
+    "name": "sphere_plane_nonlinear_PB_fixed_no_slip_hydrodynamics",
+    "geometry": "silica sphere--silica plane",
+    "electrostatics": "equal constant potential nonlinear symmetric 1:1 Poisson--Boltzmann Derjaguin",
+    "radius_m": 4.546848945303745e-06,
+    "epsilon_r": 78.5,
+    "temperature_K": 298.75,
+    "Hamaker_J": 2.4e-21,
+    "water_viscosity_Pa_s": 0.0008806453437937073,
+    "hydrodynamics": "fixed ideal no-slip sphere-plane lubrication 6*pi*eta*R^2*v/D",
+    "free_parameters_per_independent_curve": [
+      "lambda_D_nm",
+      "zeta_magnitude_mV",
+      "constant_baseline_pN"
+    ],
+    "fit_window_nm": [
+      20.0,
+      200.0
+    ],
+    "distance_step_nm": 5.0,
+    "objective": "ordinary least squares with analytical per-curve baseline; same objective for model comparison",
+    "parameter_grid": {
+      "lambda_points": 181,
+      "lambda_range_nm": [
+        1.0,
+        300.0
+      ],
+      "zeta_points": 167,
+      "zeta_range_mV": [
+        1.0,
+        250.0
+      ],
+      "distance_bins": 37
+    }
+  },
+  "contact_zero": {
+    "fixed_offsets_nm": [
+      -10.0,
+      -5.0,
+      -2.0,
+      0.0,
+      2.0,
+      5.0,
+      10.0
+    ],
+    "interpretation": "D_true=D_nominal+offset",
+    "profile": "discrete nuisance diagnostic; boundary hits are not physical D0 estimates"
+  },
+  "statistics": {
+    "random_seed": 20260901,
+    "Moran_permutations": 4999,
+    "row_cluster_bootstrap_samples": 20000,
+    "row_signflip": "exact all 2^8 sign assignments",
+    "multiple_testing": "Benjamini-Hochberg within explicitly named analysis families",
+    "distance_bin_correlation": "AIC/BIC/profile/distance tests diagnostic only"
+  },
+  "numerical_audit": {
+    "claimed_output": "model-light same-pixel shape/spatial evidence plus apparent sphere-plane PB parameters",
+    "input_domain": "four same-location 8x8 maps, 256 curves, 20-200 nm in 5 nm bins, 25.6 C pure-water environment",
+    "units": "distance nm, force pN, potential mV, time min, k N/m, InvOLS nm/V",
+    "acceptable_numerical_error": "formula/prediction closure <=1e-7 pN; qualitative inference uses spatial and model sensitivity",
+    "reproducibility": "deterministic except seeded spatial permutation/bootstrap; seed=20260901",
+    "nonlinear_library_formula_identity_max_abs_error_pN": 9.094947017729282e-13,
+    "nonlinear_to_linear_HHF_0p1mV_limit_max_relative_error": 0.0016556936172898607,
+    "hydrodynamic_inverse_distance_relative_range": 1.656368534414328e-16,
+    "hydrodynamic_linear_speed_max_relative_error": 0.0,
+    "prediction_residual_closure_max_abs_error_pN": 0.0,
+    "model_free_normalization_endpoint_max_abs_error": 0.0,
+    "all_primary_parameters_finite": true,
+    "hierarchical_independent_RSS_not_above_shared_models": true,
+    "contact_offset_search_nm": [
+      -10.0,
+      -5.0,
+      -2.0,
+      0.0,
+      2.0,
+      5.0,
+      10.0
+    ],
+    "contact_profile_boundary_fraction": 0.73828125,
+    "fixed_sphere_plane_no_slip_hydrodynamic_force_at_median_speed_pN": {
+      "20.0": 34.24789372170313,
+      "50.0": 13.699157488681248,
+      "100.0": 6.849578744340624,
+      "200.0": 3.424789372170312
+    },
+    "dimensionless_potential_epsi_over_kT_median": 0.9128240196031026,
+    "dimensionless_potential_epsi_over_kT_q25": 0.6797625677895445,
+    "dimensionless_potential_epsi_over_kT_q75": 1.1458854714166606,
+    "grid": {
+      "lambda_points": 181,
+      "lambda_range_nm": [
+        1.0,
+        300.0
+      ],
+      "zeta_points": 167,
+      "zeta_range_mV": [
+        1.0,
+        250.0
+      ],
+      "distance_bins": 37
+    },
+    "core_numerical_checks_pass": true
+  },
+  "software": {
+    "python": "3.13.5 (main, May  5 2026, 21:05:52) [GCC 14.2.0]",
+    "platform": "Linux-6.12.90+deb13.1-amd64-x86_64-with-glibc2.41",
+    "numpy": "2.2.4",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.1+dfsg1"
+  },
+  "script_sha256": "bd4a812dfae38a60dd05c105ffd7a065f91a45568e10ed44acfb74d8d7f83f94",
+  "dependency_hashes": {
+    "analysis/analyze_31_08_26_maps.py": "e7cb9ffef61d1696f1a8ea5037548940323873a7770616daaf15f7a442fe2e07",
+    "analysis/fit_31_08_26_colloid_colloid.py": "d5e9ca5a7626c4204ecc903492de343995154fd26a92a369e10c84016ec23d6d",
+    "analysis/fit_glycerol_surface_forces.py": "560e2556b6289a9433d694ef42836728e71eeb86589c88dfe049513fa4a79b4e"
+  }
+}

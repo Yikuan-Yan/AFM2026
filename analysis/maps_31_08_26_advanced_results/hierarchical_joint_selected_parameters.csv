@@ -1,0 +1,17 @@
+joint_model,map_order,relative_time_min,lambda_D_nm,zeta_magnitude_mV
+all_shared_lambda_and_zeta,2,0.0,17.320508075688775,23.5
+all_shared_lambda_and_zeta,3,27.161,17.320508075688775,23.5
+all_shared_lambda_and_zeta,4,53.33301666666667,17.320508075688775,23.5
+all_shared_lambda_and_zeta,5,78.6563,17.320508075688775,23.5
+map_shared_lambda_and_zeta,2,0.0,22.317981094042864,28.0
+map_shared_lambda_and_zeta,3,27.161,17.878143222611804,26.5
+map_shared_lambda_and_zeta,4,53.33301666666667,13.44207608814922,23.5
+map_shared_lambda_and_zeta,5,78.6563,11.472483074052871,19.0
+shared_lambda_map_specific_zeta,2,0.0,18.453731477822707,28.0
+shared_lambda_map_specific_zeta,3,27.161,18.453731477822707,26.5
+shared_lambda_map_specific_zeta,4,53.33301666666667,18.453731477822707,22.0
+shared_lambda_map_specific_zeta,5,78.6563,18.453731477822707,17.5
+map_specific_lambda_shared_zeta,2,0.0,22.317981094042864,28.0
+map_specific_lambda_shared_zeta,3,27.161,16.780266063679814,28.0
+map_specific_lambda_shared_zeta,4,53.33301666666667,9.48607856330461,28.0
+map_specific_lambda_shared_zeta,5,78.6563,6.694329500821696,28.0

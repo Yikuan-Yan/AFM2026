@@ -1,0 +1,281 @@
+{
+  "analysis": "31-08-26 five-map raw reconstruction, QC, and same-location map2/map3/map4/map5 time sequence",
+  "claim_status": "calibrated_force_conditional_on_D5_metadata_identity_inference",
+  "archive": {
+    "name": "documents-export-2026-8-31.zip",
+    "sha256_before_deletion": "dc299da6d0104fa0047602eac1c9068b8058bc88bd4cfc0c59c21fc07eb50d47",
+    "zip_crc_test": "passed before extraction",
+    "deleted_after_verified_extraction": true
+  },
+  "input_hashes": {
+    "31-08-26/map-data-2026.08.31-14.40.37.339.jpk-force-map": "0dcdb836e2ee7c24d4e31f2e8b485e964031a78d397cb46f68ed7965abab46d2",
+    "31-08-26/map-data-2026.08.31-15.01.59.514.jpk-force-map": "6d561d5d1469d39c19a90a6a4a1e9d12e7641bbb930bc69f68b2ef119ce8fde7",
+    "31-08-26/map-data-2026.08.31-15.29.09.174.jpk-force-map": "3821578e6f21af4f53b4614b3be963423350ee4dbc8d70380eb4743a7890f8b3",
+    "31-08-26/map-data-2026.08.31-15.55.19.495.jpk-force-map": "17600e26d8d99dcaf6f28bdd5a03625f46a7248c4a3b12ee03948aa3f0275cee",
+    "31-08-26/map-data-2026.08.31-16.20.38.892.jpk-force-map": "8c11e177eac08d8fa81bdb7a0f30e75af5eb08c374c06ab78e20249af8864a3e"
+  },
+  "map_environment": "not encoded in source map metadata",
+  "cantilever_name_encoded_in_maps": false,
+  "cantilever_identity_inference": {
+    "selected": "D5",
+    "method": "minimum Euclidean distance between log ratios of stored InvOLS and stored spring constant versus D4-D6 calibration-file fingerprints",
+    "fingerprints": {
+      "D4": {
+        "reference_file": "27-08-26/calibration/D4/force-save-2026.08.27-11.24.27.585.jpk-force",
+        "stored_sensitivity_nm_per_V": 70.11239481485714,
+        "stored_spring_constant_N_per_m": 0.17763893140867215,
+        "log_ratio_distance_to_new_maps": 0.6887798880193234
+      },
+      "D5": {
+        "reference_file": "27-08-26/calibration/D5/force-save-2026.08.27-11.11.53.516.jpk-force",
+        "stored_sensitivity_nm_per_V": 75.52966328633882,
+        "stored_spring_constant_N_per_m": 0.3482520814195991,
+        "log_ratio_distance_to_new_maps": 0.036334666615002294
+      },
+      "D6": {
+        "reference_file": "27-08-26/calibration/D6/force-save-2026.08.27-10.59.54.339.jpk-force",
+        "stored_sensitivity_nm_per_V": 69.47837123731803,
+        "stored_spring_constant_N_per_m": 0.1917626908326913,
+        "log_ratio_distance_to_new_maps": 0.6150764442469354
+      }
+    }
+  },
+  "independent_calibration_summary": "analysis/palindrome_27_08_26_full_results/calibration_summary.csv",
+  "independent_calibrated_spring_constant_N_per_m": 0.31134017315783524,
+  "spring_repeatability_sd_N_per_m": 0.021739952396307577,
+  "contact_primary_span_nm": 40.0,
+  "contact_check_spans_nm": [
+    30.0,
+    50.0
+  ],
+  "contact_R2_min": 0.995,
+  "global_map_hard_contact_InvOLS_nm_per_V": 68.28960406065333,
+  "force_definition": "F=k*InvOLS*(vDeflection - per-curve far baseline)",
+  "distance_definition": "D=measuredHeight + InvOLS*corrected_vDeflection - fitted_contact_height",
+  "force_baselines": [
+    "per-curve far-field linear subtraction",
+    "per-curve far-field constant reference"
+  ],
+  "distribution_comparison": {
+    "tests": [
+      "Welch t-test",
+      "Mann-Whitney U"
+    ],
+    "effect_sizes": [
+      "Cliff's delta",
+      "Cohen's d"
+    ],
+    "claim_limit": "descriptive naive-pixel comparison; spatial correlation and non-overlapping map areas preclude a velocity-causal test"
+  },
+  "baseline_coupling": "Spearman correlation of force with far-slope, local contact InvOLS, acquisition order, physical row, and physical column",
+  "paired_time_comparison": {
+    "maps": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "coordinates_match_pointwise": true,
+    "maximum_pointwise_coordinate_difference_nm": 0.0,
+    "relative_start_times_min": [
+      0.0,
+      27.161,
+      53.33301666666667,
+      78.6563
+    ],
+    "adjacent_start_time_lags_min": [
+      27.161,
+      26.17201666666667,
+      25.32328333333333
+    ],
+    "total_start_time_lag_min": 78.6563,
+    "time_series": "map2, map3, map4, map5",
+    "tests": [
+      "pairwise paired t-test and Wilcoxon signed-rank over matched pixels",
+      "pairwise Wilcoxon signed-rank over eight physical-row median differences",
+      "per-pixel four-timepoint linear slope with pixel and row-block Wilcoxon tests"
+    ],
+    "claim_limit": "four same-location time points; time-law functional form remains weakly identifiable and spatial/serial correlation remains"
+  },
+  "paired_QC_comparison": {
+    "pairs": [
+      "map2 versus map3",
+      "map2 versus map4",
+      "map2 versus map5",
+      "map3 versus map4",
+      "map3 versus map5",
+      "map4 versus map5"
+    ],
+    "test": "Wilcoxon signed-rank over matched pixels",
+    "metrics": [
+      "far_noise",
+      "far_slope",
+      "gap_speed",
+      "local_contact_InvOLS",
+      "retract_detachment_travel",
+      "retract_pull_off_force",
+      "terminal_load"
+    ]
+  },
+  "within_map_50nm_linear_fits": {
+    "maps": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "primary_fit": "Theil-Sen robust slope with scipy.stats.theilslopes 95% slope confidence interval",
+    "comparison_fit": "ordinary least squares via scipy.stats.linregress",
+    "sample_order": "1 through 64 in stored map acquisition order",
+    "claim_limit": "acquisition order confounds elapsed time with raster position"
+  },
+  "absolute_force_time_statistics": {
+    "maps": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "distances_nm": [
+      20.0,
+      50.0,
+      100.0,
+      200.0
+    ],
+    "force_definition": "absolute value of each pixel force before aggregation",
+    "center": "arithmetic mean over 64 pixels",
+    "spread": "sample standard deviation and sample variance over 64 pixels with ddof=1",
+    "baseline_method": "per-curve far-field linear subtraction",
+    "claim_limit": "spatial distribution width, not uncertainty of the mean; absolute value folds positive and negative far-field noise together"
+  },
+  "conditional_hydrodynamic_scale_check": {
+    "temperature_C_from_user_context": 25.6,
+    "liquid_assumption": "pure water",
+    "probe_radius_m_from_prior_sphere_characterization": 4.546848945303745e-06,
+    "boundary_condition": "no slip",
+    "formula": "delta_F=6*pi*eta*R^2*delta_v/D",
+    "claim_limit": "order-of-magnitude comparison only; liquid and probe are not encoded in the map files"
+  },
+  "bin_centers_nm": [
+    5.0,
+    10.0,
+    15.0,
+    20.0,
+    25.0,
+    30.0,
+    35.0,
+    40.0,
+    45.0,
+    50.0,
+    55.0,
+    60.0,
+    65.0,
+    70.0,
+    75.0,
+    80.0,
+    85.0,
+    90.0,
+    95.0,
+    100.0,
+    105.0,
+    110.0,
+    115.0,
+    120.0,
+    125.0,
+    130.0,
+    135.0,
+    140.0,
+    145.0,
+    150.0,
+    155.0,
+    160.0,
+    165.0,
+    170.0,
+    175.0,
+    180.0,
+    185.0,
+    190.0,
+    195.0,
+    200.0,
+    205.0,
+    210.0,
+    215.0,
+    220.0,
+    225.0,
+    230.0,
+    235.0,
+    240.0,
+    245.0,
+    250.0,
+    255.0,
+    260.0,
+    265.0,
+    270.0,
+    275.0,
+    280.0,
+    285.0,
+    290.0,
+    295.0,
+    300.0,
+    305.0,
+    310.0,
+    315.0,
+    320.0,
+    325.0,
+    330.0,
+    335.0,
+    340.0,
+    345.0,
+    350.0,
+    355.0,
+    360.0,
+    365.0,
+    370.0,
+    375.0,
+    380.0,
+    385.0,
+    390.0,
+    395.0,
+    400.0,
+    405.0,
+    410.0,
+    415.0,
+    420.0,
+    425.0,
+    430.0,
+    435.0,
+    440.0,
+    445.0,
+    450.0,
+    455.0,
+    460.0,
+    465.0,
+    470.0,
+    475.0,
+    480.0,
+    485.0,
+    490.0,
+    495.0,
+    500.0
+  ],
+  "target_distances_nm": [
+    20.0,
+    50.0,
+    100.0,
+    200.0
+  ],
+  "randomness": "none",
+  "software": {
+    "python": "3.13.5 (main, May  5 2026, 21:05:52) [GCC 14.2.0]",
+    "platform": "Linux-6.12.90+deb13.1-amd64-x86_64-with-glibc2.41",
+    "numpy": "2.2.4",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.1+dfsg1"
+  },
+  "script_sha256": "e7cb9ffef61d1696f1a8ea5037548940323873a7770616daaf15f7a442fe2e07",
+  "dependency_hashes": {
+    "analysis/fit_glycerol_surface_forces.py": "560e2556b6289a9433d694ef42836728e71eeb86589c88dfe049513fa4a79b4e",
+    "analysis/analyze_velocity_systematics.py": "5070c5d5206781beedd39789aee08789981b1d3e24358b9f5a08756edee4bb26",
+    "analysis/analyze_27_08_26_palindrome_pilot.py": "f868abfabf6abd70f9870998b6275c399c6bbd0d516fefab74b1766b3e4d3b3e"
+  }
+}

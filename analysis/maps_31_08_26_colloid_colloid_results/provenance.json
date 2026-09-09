@@ -1,0 +1,113 @@
+{
+  "analysis": "all 64 curves per map fitted independently with requested equal-sphere colloid-colloid HHF/DLVO model",
+  "claim_status": "apparent_model_mismatched_geometry_diagnostic",
+  "input_hashes": {
+    "31-08-26/map-data-2026.08.31-14.40.37.339.jpk-force-map": "0dcdb836e2ee7c24d4e31f2e8b485e964031a78d397cb46f68ed7965abab46d2",
+    "31-08-26/map-data-2026.08.31-15.01.59.514.jpk-force-map": "6d561d5d1469d39c19a90a6a4a1e9d12e7641bbb930bc69f68b2ef119ce8fde7",
+    "31-08-26/map-data-2026.08.31-15.29.09.174.jpk-force-map": "3821578e6f21af4f53b4614b3be963423350ee4dbc8d70380eb4743a7890f8b3",
+    "31-08-26/map-data-2026.08.31-15.55.19.495.jpk-force-map": "17600e26d8d99dcaf6f28bdd5a03625f46a7248c4a3b12ee03948aa3f0275cee",
+    "31-08-26/map-data-2026.08.31-16.20.38.892.jpk-force-map": "8c11e177eac08d8fa81bdb7a0f30e75af5eb08c374c06ab78e20249af8864a3e"
+  },
+  "raw_reconstruction_script": "analysis/analyze_31_08_26_maps.py",
+  "cantilever": {
+    "inferred": "D5",
+    "spring_constant_N_per_m": 0.31134017315783524,
+    "repeatability_sd_N_per_m": 0.021739952396307577,
+    "fingerprints": {
+      "D4": {
+        "reference_file": "27-08-26/calibration/D4/force-save-2026.08.27-11.24.27.585.jpk-force",
+        "stored_sensitivity_nm_per_V": 70.11239481485714,
+        "stored_spring_constant_N_per_m": 0.17763893140867215,
+        "log_ratio_distance_to_new_maps": 0.6887798880193234
+      },
+      "D5": {
+        "reference_file": "27-08-26/calibration/D5/force-save-2026.08.27-11.11.53.516.jpk-force",
+        "stored_sensitivity_nm_per_V": 75.52966328633882,
+        "stored_spring_constant_N_per_m": 0.3482520814195991,
+        "log_ratio_distance_to_new_maps": 0.036334666615002294
+      },
+      "D6": {
+        "reference_file": "27-08-26/calibration/D6/force-save-2026.08.27-10.59.54.339.jpk-force",
+        "stored_sensitivity_nm_per_V": 69.47837123731803,
+        "stored_spring_constant_N_per_m": 0.1917626908326913,
+        "log_ratio_distance_to_new_maps": 0.6150764442469354
+      }
+    }
+  },
+  "global_liquid_InvOLS_nm_per_V": 68.28960406065333,
+  "contact_fit_rows": 320,
+  "model": {
+    "name": "equal_potential_equal_sphere_linear_HHF_plus_Derjaguin_vdW_and_optional_fixed_lubrication",
+    "experimental_geometry": "sphere-plane",
+    "fitted_geometry": "equal sphere-sphere at explicit user request",
+    "R1_m": 4.546848945303745e-06,
+    "R2_m": 4.546848945303745e-06,
+    "R_eff_m": 2.2734244726518727e-06,
+    "temperature_K": 298.75,
+    "epsilon_r": 78.5,
+    "Hamaker_J": 2.4e-21,
+    "water_viscosity_Pa_s": 0.0008806453437937073,
+    "primary_variant": "far_linear_fixed_two_sphere_hydrodynamics",
+    "fit_variants": {
+      "far_linear_fixed_two_sphere_hydrodynamics": [
+        "|line",
+        true
+      ],
+      "far_linear_no_hydrodynamics": [
+        "|line",
+        false
+      ],
+      "far_constant_fixed_two_sphere_hydrodynamics": [
+        "|constant",
+        true
+      ]
+    },
+    "fit_window_nm": [
+      20.0,
+      200.0
+    ],
+    "distance_step_nm": 5.0,
+    "free_parameters": [
+      "lambda_D_nm",
+      "zeta_magnitude_mV",
+      "baseline_pN"
+    ],
+    "loss": "soft_l1 with per-curve far-noise scale, minimum 2 pN",
+    "parameter_bounds": {
+      "lambda_D_nm": [
+        0.5,
+        300.0
+      ],
+      "zeta_magnitude_mV": [
+        0.1,
+        250.0
+      ],
+      "baseline_pN": [
+        -500.0,
+        500.0
+      ]
+    }
+  },
+  "fit_counts": {
+    "maps": 4,
+    "curves_per_map": 64,
+    "variants": 3,
+    "total_fits": 768,
+    "primary_fits": 256,
+    "prediction_rows": 28416
+  },
+  "randomness": "none",
+  "software": {
+    "python": "3.13.5 (main, May  5 2026, 21:05:52) [GCC 14.2.0]",
+    "platform": "Linux-6.12.90+deb13.1-amd64-x86_64-with-glibc2.41",
+    "numpy": "2.2.4",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.1+dfsg1"
+  },
+  "script_sha256": "d5e9ca5a7626c4204ecc903492de343995154fd26a92a369e10c84016ec23d6d",
+  "dependency_hashes": {
+    "analysis/analyze_31_08_26_maps.py": "e7cb9ffef61d1696f1a8ea5037548940323873a7770616daaf15f7a442fe2e07",
+    "analysis/fit_glycerol_surface_forces.py": "560e2556b6289a9433d694ef42836728e71eeb86589c88dfe049513fa4a79b4e",
+    "analysis/palindrome_27_08_26_full_results/calibration_summary.csv": "109b736793e70267155142a4729050cacdf52656ca6dcbb1f7e0e1bb35b35c6c"
+  }
+}

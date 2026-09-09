@@ -1,0 +1,5 @@
+map_order,relative_time_min,best_lambda_D_nm,lambda_profile_low_nm,lambda_profile_high_nm,best_zeta_magnitude_mV,zeta_profile_low_mV,zeta_profile_high_mV,best_baseline_pN,weighted_objective,reduced_objective_using_spatial_IQR_scale,profile_status
+2,0.0,28.75737120051241,16.25687467927739,63.50293557344233,28.0,23.5,34.0,-41.67587205459595,0.11269503361035665,0.003314559812069313,map_median_spatial_IQR_weighted_diagnostic_not_formal_CI
+3,27.161,17.320508075688775,5.8973913155415785,50.86994977074026,25.0,16.0,49.0,-17.237912771531676,0.2644131093842753,0.007776856158361038,map_median_spatial_IQR_weighted_diagnostic_not_formal_CI
+4,53.33301666666667,15.258557842693115,5.362589971320985,40.750112830372316,22.0,14.5,46.0,-21.03010448888936,0.23839977375366994,0.007011758051578528,map_median_spatial_IQR_weighted_diagnostic_not_formal_CI
+5,78.6563,14.321546547664008,2.5066387995422272,300.0,16.0,5.5,250.0,-13.051130021517874,0.10185289721210784,0.0029956734474149366,map_median_spatial_IQR_weighted_diagnostic_not_formal_CI
