@@ -1,0 +1,9 @@
+location,distance_nm,pairs,negative_pair_medians,pair_median_difference_median_pN,minimum_snap_safe_paired_pixels,maximum_snap_safe_paired_pixels,guard
+A,20.0,9,8,-26.781248580471157,53,63,bin_lower_edge_at_least_5nm_beyond_detected_snap_in_both_maps
+A,50.0,9,8,-16.334444302076434,63,64,bin_lower_edge_at_least_5nm_beyond_detected_snap_in_both_maps
+A,100.0,9,8,-10.003733903547165,63,64,bin_lower_edge_at_least_5nm_beyond_detected_snap_in_both_maps
+A,200.0,9,7,-7.143311720619028,64,64,bin_lower_edge_at_least_5nm_beyond_detected_snap_in_both_maps
+B,20.0,9,7,-5.5799546562059845,29,51,bin_lower_edge_at_least_5nm_beyond_detected_snap_in_both_maps
+B,50.0,9,7,-8.278141461996071,44,64,bin_lower_edge_at_least_5nm_beyond_detected_snap_in_both_maps
+B,100.0,9,6,-4.512570169386088,44,64,bin_lower_edge_at_least_5nm_beyond_detected_snap_in_both_maps
+B,200.0,9,6,-2.1077830092225804,44,64,bin_lower_edge_at_least_5nm_beyond_detected_snap_in_both_maps

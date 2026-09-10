@@ -1,0 +1,97 @@
+{
+  "created_utc": "2026-09-10T15:27:21.270360+00:00",
+  "analysis": "secondary finite-speed apparent nonlinear-PB fits for 10-09-26 two-location time series",
+  "claim_scope": "apparent/model-conditioned lambda_D and potential magnitude; not bulk Debye length or zeta potential",
+  "model": "equal constant-potential sphere-plane nonlinear 1:1 PB Derjaguin + sphere-plane vdW + fitted constant baseline",
+  "potential_sign": "unidentified magnitude only",
+  "probe_radius_m": 4.546848945303745e-06,
+  "temperature_C": 25.6,
+  "epsilon_r": 78.5,
+  "Hamaker_J": 2.4e-21,
+  "spring_constant_N_per_m": 0.16482877909505173,
+  "water_InvOLS_nm_per_V": 54.415557777695916,
+  "aggregation": "median of available individual 5 nm pixel-bin medians; scan 36 excluded for fewer than 48 pixels",
+  "weight": "spatial 1.4826*MAD floored by max(3 pN, robust MAD of map median at 400-500 nm); no sqrt(pixel count) reduction",
+  "time_model": "map-level OLS with measured gap speed; HC3 primary and Newey-West HAC(1/2) ordered-map sensitivities",
+  "fit_variants": [
+    "primary",
+    "constant_baseline",
+    "lower_plus_10nm",
+    "upper_200nm",
+    "common_150_250nm",
+    "no_slip_hydrodynamic"
+  ],
+  "fit_bounds": {
+    "lambda_D_nm": [
+      1.0,
+      1000.0
+    ],
+    "potential_magnitude_mV": [
+      0.1,
+      250.0
+    ],
+    "baseline_pN": [
+      -500.0,
+      500.0
+    ]
+  },
+  "snap_guard": "5 nm bin lower edge is at least 5 nm beyond maximum detected snap; true common variant uses 150-250 nm",
+  "no_slip_sensitivity": "fixed ideal 6*pi*eta*R^2*U/D using per-pixel measured gap speed and far-line projection; not fitted or validated hydrodynamic amplitude",
+  "validation": {
+    "upstream_maps": 36,
+    "PB_eligible_maps": 35,
+    "fit_tasks": 209,
+    "excluded_map_scans": [
+      36
+    ],
+    "guard_rule": "5 nm bin lower edge is at least 5 nm beyond maximum detected snap; true common variant uses 150-250 nm",
+    "fit_tasks_completed": 209,
+    "optimizer_success_fits": 209,
+    "finite_parameter_fits": 209,
+    "primary_quality_pass_maps": 34,
+    "primary_flagged_maps": [
+      {
+        "scan": 5,
+        "flags": "broad_local_parameter_scale"
+      }
+    ],
+    "primary_max_two_start_relative_cost_difference": 0.007233648437765249,
+    "common_window_quality_pass_fits": 0,
+    "minimum_snap_guard_margin_nm": 0.10532471544400579,
+    "prediction_closure_max_abs_pN": 0.0,
+    "hydrodynamic_double_speed_ratio": 2.0,
+    "hydrodynamic_20_to_50nm_ratio": 2.5000000000000004,
+    "hydrodynamic_force_pN_at_1um_s": {
+      "20nm": 17.159049353985456,
+      "50nm": 6.863619741594181
+    },
+    "existing_model_self_check": {
+      "far_field_synthetic_slope_relative_error": 5.995204332975845e-15,
+      "far_field_synthetic_subtraction_max_abs_V": 4.163336342344337e-17,
+      "pb_linear_limit_max_relative_error": 0.0016521456620162134,
+      "pb_far_asymptote_max_relative_error": 0.0010543386009638223,
+      "cheng_water_viscosity_mPa_s": 0.8806453437937073,
+      "cheng_glycerol_viscosity_mPa_s": 860.333956853547
+    }
+  },
+  "upstream_sha256": {
+    "analysis/time_dependence_10_09_26_results/all_pixel_force_curves.npz": "c7d8691460568d8db5d592ef6682289c9bc24e291709fc62143eb9d0f7506025",
+    "analysis/time_dependence_10_09_26_results/map_inventory_QC.csv": "c778eb741116ff205838b7fa068087e2a09c5edc5029401681d233c53cf92849",
+    "analysis/time_dependence_10_09_26_results/pixel_QC.csv": "78e18515822fe899b420d5570f176133ffb62270cef5f6d2ca09e2e2d80f067c",
+    "analysis/time_dependence_10_09_26_results/provenance.json": "b958340dd105ddb9647bed6c3372e3339bcb00ec1a4af02064bbcf3f73d32fb1",
+    "analysis/time_dependence_10_09_26_results/artifact_manifest.sha256": "7c4bedd2ddb6584a1e5e867fc1b6e7eb4c9e2516272e65849269b2eb0db016e0"
+  },
+  "code_sha256": {
+    "analysis/fit_10_09_26_apparent_pb.py": "0e3897488cf7d4b7d1e38c312c4cd987936eb6fe52e62a925e80fc070d8b4d5a",
+    "analysis/fit_08_09_26_water.py": "ff9cb5fb2d7de627ea8cbbe8af5027d5a8702eac6b0f0a866b5a7a56260fea4e",
+    "analysis/analyze_10_09_26_time_dependence.py": "9794c860e870fa5ce79fed6e60abfa79727345f15b1f42bbaf31af53d6e48c29",
+    "analysis/fit_glycerol_surface_forces.py": "560e2556b6289a9433d694ef42836728e71eeb86589c88dfe049513fa4a79b4e"
+  },
+  "software": {
+    "python": "3.13.5 (main, May  5 2026, 21:05:52) [GCC 14.2.0]",
+    "platform": "Linux-6.12.90+deb13.1-amd64-x86_64-with-glibc2.41",
+    "numpy": "2.2.4",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.1+dfsg1"
+  }
+}
