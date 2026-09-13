@@ -1,0 +1,59 @@
+{
+  "analysis": "descriptive_map_level_time_speed_rank_and_palindrome_analysis",
+  "analysis_script": "analysis/analyze_12_09_26_997glycerol_time_speed.py",
+  "analysis_script_sha256": "ac983b91952e398efbaed4326c4b2680009724fa147aab77ebdeeb7fbd20d82f",
+  "input_packages": {
+    "adaptive_baseline": {
+      "path": "analysis/glycerol_99p7_D3_adaptive_baseline_results",
+      "manifest_sha256": "92f02c4455e8f36c971528a0e932bf7a7ad8dd23096d0c367c93e5d89983984d",
+      "verified_manifest_entries": 17
+    },
+    "observational": {
+      "path": "analysis/glycerol_99p7_D3_observational_results",
+      "manifest_sha256": "45850cca220f7ba27cbeb564053609d4f360d538bf31762c7af46e7c04495c4f",
+      "verified_manifest_entries": 16
+    }
+  },
+  "cohort": {
+    "map_count": 32,
+    "pixels_per_map": 64,
+    "blocks": 4,
+    "maps_per_block": 8,
+    "speeds_um_per_s": [
+      0.1,
+      0.3,
+      0.9,
+      2.7
+    ],
+    "maps_per_speed": 8,
+    "palindrome_pairs_per_speed": 4
+  },
+  "statistical_unit": "map median",
+  "operations": {
+    "chronology_time": "actual midpoint of first and last segment timestamps in each map",
+    "global_association": "Spearman rank correlation across 32 map medians",
+    "same_speed_time_association": "Spearman rank correlation across eight map medians at each speed",
+    "palindrome_history": "exact later minus earlier map-median difference for each same-speed symmetric pair",
+    "palindrome_speed": "arithmetic mean of each same-speed early/late pair, then Spearman rank across four speeds within a block",
+    "distance_resolved_input": "median of 64 per-curve dynamic-baseline-corrected 5 nm bins within each map",
+    "p_values": "not reported because maps are sequential correlated observations, not randomized independent trials",
+    "fits_performed": [],
+    "explicitly_not_performed": [
+      "linear or nonlinear time regression",
+      "partial correlation",
+      "contact or separation reconstruction",
+      "hydrodynamic fit",
+      "PB or other surface-force fit",
+      "zero-speed extrapolation"
+    ]
+  },
+  "interpretation_boundary": "rank associations and exact paired differences are descriptive; they do not identify speed or time causally",
+  "software": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "matplotlib": "3.9.3"
+  },
+  "randomness": "none"
+}

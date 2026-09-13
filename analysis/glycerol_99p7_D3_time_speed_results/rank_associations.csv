@@ -1,0 +1,81 @@
+metric,metric_label,unit,scope,predictor,speed_stratum_um_per_s,block,n_maps_or_pair_means,spearman_rho,inference_boundary
+baseline_transient_V,Dynamic baseline − initial endpoint,V,all_32_maps,speed_um_per_s,,,32,0.9687189593929655,descriptive rank association; repeated sequential maps
+baseline_transient_V,Dynamic baseline − initial endpoint,V,all_32_maps,elapsed_midpoint_min,,,32,-0.13343108504398826,descriptive serial association; speed protocol is balanced but not randomized
+baseline_transient_V,Dynamic baseline − initial endpoint,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.1,,8,-0.1666666666666667,descriptive same-speed serial association; two maps per block
+baseline_transient_V,Dynamic baseline − initial endpoint,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.3,,8,-0.6190476190476191,descriptive same-speed serial association; two maps per block
+baseline_transient_V,Dynamic baseline − initial endpoint,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.9,,8,-0.5952380952380953,descriptive same-speed serial association; two maps per block
+baseline_transient_V,Dynamic baseline − initial endpoint,V,same_speed_across_four_blocks,elapsed_midpoint_min,2.7,,8,-0.7380952380952381,descriptive same-speed serial association; two maps per block
+baseline_transient_V,Dynamic baseline − initial endpoint,V,within_block_palindrome_pair_means,speed_um_per_s,,1,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+baseline_transient_V,Dynamic baseline − initial endpoint,V,within_block_palindrome_pair_means,speed_um_per_s,,2,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+baseline_transient_V,Dynamic baseline − initial endpoint,V,within_block_palindrome_pair_means,speed_um_per_s,,3,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+baseline_transient_V,Dynamic baseline − initial endpoint,V,within_block_palindrome_pair_means,speed_um_per_s,,4,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+dynamic_baseline_raw_V,Absolute dynamic-baseline detector level,V,all_32_maps,speed_um_per_s,,,32,0.4207872979863193,descriptive rank association; repeated sequential maps
+dynamic_baseline_raw_V,Absolute dynamic-baseline detector level,V,all_32_maps,elapsed_midpoint_min,,,32,0.17521994134897356,descriptive serial association; speed protocol is balanced but not randomized
+dynamic_baseline_raw_V,Absolute dynamic-baseline detector level,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.1,,8,0.4285714285714286,descriptive same-speed serial association; two maps per block
+dynamic_baseline_raw_V,Absolute dynamic-baseline detector level,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.3,,8,0.14285714285714288,descriptive same-speed serial association; two maps per block
+dynamic_baseline_raw_V,Absolute dynamic-baseline detector level,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.9,,8,0.4285714285714286,descriptive same-speed serial association; two maps per block
+dynamic_baseline_raw_V,Absolute dynamic-baseline detector level,V,same_speed_across_four_blocks,elapsed_midpoint_min,2.7,,8,0.11904761904761905,descriptive same-speed serial association; two maps per block
+dynamic_baseline_raw_V,Absolute dynamic-baseline detector level,V,within_block_palindrome_pair_means,speed_um_per_s,,1,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+dynamic_baseline_raw_V,Absolute dynamic-baseline detector level,V,within_block_palindrome_pair_means,speed_um_per_s,,2,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+dynamic_baseline_raw_V,Absolute dynamic-baseline detector level,V,within_block_palindrome_pair_means,speed_um_per_s,,3,4,0.7999999999999999,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+dynamic_baseline_raw_V,Absolute dynamic-baseline detector level,V,within_block_palindrome_pair_means,speed_um_per_s,,4,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+corrected_320_360nm_V,Corrected increment at 320–360 nm travel,V,all_32_maps,speed_um_per_s,,,32,0.9687189593929655,descriptive rank association; repeated sequential maps
+corrected_320_360nm_V,Corrected increment at 320–360 nm travel,V,all_32_maps,elapsed_midpoint_min,,,32,-0.1730205278592375,descriptive serial association; speed protocol is balanced but not randomized
+corrected_320_360nm_V,Corrected increment at 320–360 nm travel,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.1,,8,0.11904761904761905,descriptive same-speed serial association; two maps per block
+corrected_320_360nm_V,Corrected increment at 320–360 nm travel,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.3,,8,-0.9285714285714287,descriptive same-speed serial association; two maps per block
+corrected_320_360nm_V,Corrected increment at 320–360 nm travel,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.9,,8,-0.9523809523809524,descriptive same-speed serial association; two maps per block
+corrected_320_360nm_V,Corrected increment at 320–360 nm travel,V,same_speed_across_four_blocks,elapsed_midpoint_min,2.7,,8,-0.9761904761904763,descriptive same-speed serial association; two maps per block
+corrected_320_360nm_V,Corrected increment at 320–360 nm travel,V,within_block_palindrome_pair_means,speed_um_per_s,,1,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+corrected_320_360nm_V,Corrected increment at 320–360 nm travel,V,within_block_palindrome_pair_means,speed_um_per_s,,2,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+corrected_320_360nm_V,Corrected increment at 320–360 nm travel,V,within_block_palindrome_pair_means,speed_um_per_s,,3,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+corrected_320_360nm_V,Corrected increment at 320–360 nm travel,V,within_block_palindrome_pair_means,speed_um_per_s,,4,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+corrected_380_420nm_V,Corrected increment at 380–420 nm travel,V,all_32_maps,speed_um_per_s,,,32,0.9687189593929655,descriptive rank association; repeated sequential maps
+corrected_380_420nm_V,Corrected increment at 380–420 nm travel,V,all_32_maps,elapsed_midpoint_min,,,32,-0.21517595307917886,descriptive serial association; speed protocol is balanced but not randomized
+corrected_380_420nm_V,Corrected increment at 380–420 nm travel,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.1,,8,-0.7380952380952381,descriptive same-speed serial association; two maps per block
+corrected_380_420nm_V,Corrected increment at 380–420 nm travel,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.3,,8,-0.9047619047619048,descriptive same-speed serial association; two maps per block
+corrected_380_420nm_V,Corrected increment at 380–420 nm travel,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.9,,8,-0.9285714285714287,descriptive same-speed serial association; two maps per block
+corrected_380_420nm_V,Corrected increment at 380–420 nm travel,V,same_speed_across_four_blocks,elapsed_midpoint_min,2.7,,8,-0.880952380952381,descriptive same-speed serial association; two maps per block
+corrected_380_420nm_V,Corrected increment at 380–420 nm travel,V,within_block_palindrome_pair_means,speed_um_per_s,,1,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+corrected_380_420nm_V,Corrected increment at 380–420 nm travel,V,within_block_palindrome_pair_means,speed_um_per_s,,2,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+corrected_380_420nm_V,Corrected increment at 380–420 nm travel,V,within_block_palindrome_pair_means,speed_um_per_s,,3,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+corrected_380_420nm_V,Corrected increment at 380–420 nm travel,V,within_block_palindrome_pair_means,speed_um_per_s,,4,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+corrected_terminal_V,Corrected terminal last 25 nm,V,all_32_maps,speed_um_per_s,,,32,-0.9687189593929655,descriptive rank association; repeated sequential maps
+corrected_terminal_V,Corrected terminal last 25 nm,V,all_32_maps,elapsed_midpoint_min,,,32,0.23093841642228732,descriptive serial association; speed protocol is balanced but not randomized
+corrected_terminal_V,Corrected terminal last 25 nm,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.1,,8,0.9047619047619048,descriptive same-speed serial association; two maps per block
+corrected_terminal_V,Corrected terminal last 25 nm,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.3,,8,0.9047619047619048,descriptive same-speed serial association; two maps per block
+corrected_terminal_V,Corrected terminal last 25 nm,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.9,,8,1.0,descriptive same-speed serial association; two maps per block
+corrected_terminal_V,Corrected terminal last 25 nm,V,same_speed_across_four_blocks,elapsed_midpoint_min,2.7,,8,0.9047619047619048,descriptive same-speed serial association; two maps per block
+corrected_terminal_V,Corrected terminal last 25 nm,V,within_block_palindrome_pair_means,speed_um_per_s,,1,4,-1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+corrected_terminal_V,Corrected terminal last 25 nm,V,within_block_palindrome_pair_means,speed_um_per_s,,2,4,-1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+corrected_terminal_V,Corrected terminal last 25 nm,V,within_block_palindrome_pair_means,speed_um_per_s,,3,4,-1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+corrected_terminal_V,Corrected terminal last 25 nm,V,within_block_palindrome_pair_means,speed_um_per_s,,4,4,-1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+baseline_window_drift_V,Within-baseline-window drift magnitude,V,all_32_maps,speed_um_per_s,,,32,0.9687189593929655,descriptive rank association; repeated sequential maps
+baseline_window_drift_V,Within-baseline-window drift magnitude,V,all_32_maps,elapsed_midpoint_min,,,32,-0.08834310850439882,descriptive serial association; speed protocol is balanced but not randomized
+baseline_window_drift_V,Within-baseline-window drift magnitude,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.1,,8,-0.023809523809523815,descriptive same-speed serial association; two maps per block
+baseline_window_drift_V,Within-baseline-window drift magnitude,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.3,,8,0.07142857142857144,descriptive same-speed serial association; two maps per block
+baseline_window_drift_V,Within-baseline-window drift magnitude,V,same_speed_across_four_blocks,elapsed_midpoint_min,0.9,,8,-0.6190476190476191,descriptive same-speed serial association; two maps per block
+baseline_window_drift_V,Within-baseline-window drift magnitude,V,same_speed_across_four_blocks,elapsed_midpoint_min,2.7,,8,-0.8333333333333335,descriptive same-speed serial association; two maps per block
+baseline_window_drift_V,Within-baseline-window drift magnitude,V,within_block_palindrome_pair_means,speed_um_per_s,,1,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+baseline_window_drift_V,Within-baseline-window drift magnitude,V,within_block_palindrome_pair_means,speed_um_per_s,,2,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+baseline_window_drift_V,Within-baseline-window drift magnitude,V,within_block_palindrome_pair_means,speed_um_per_s,,3,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+baseline_window_drift_V,Within-baseline-window drift magnitude,V,within_block_palindrome_pair_means,speed_um_per_s,,4,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+retract_minimum_delta_V,"Retract minimum, endpoint referenced",V,all_32_maps,speed_um_per_s,,,32,0.354187869528053,descriptive rank association; repeated sequential maps
+retract_minimum_delta_V,"Retract minimum, endpoint referenced",V,all_32_maps,elapsed_midpoint_min,,,32,0.530791788856305,descriptive serial association; speed protocol is balanced but not randomized
+retract_minimum_delta_V,"Retract minimum, endpoint referenced",V,same_speed_across_four_blocks,elapsed_midpoint_min,0.1,,8,0.3571428571428572,descriptive same-speed serial association; two maps per block
+retract_minimum_delta_V,"Retract minimum, endpoint referenced",V,same_speed_across_four_blocks,elapsed_midpoint_min,0.3,,8,0.3333333333333334,descriptive same-speed serial association; two maps per block
+retract_minimum_delta_V,"Retract minimum, endpoint referenced",V,same_speed_across_four_blocks,elapsed_midpoint_min,0.9,,8,0.880952380952381,descriptive same-speed serial association; two maps per block
+retract_minimum_delta_V,"Retract minimum, endpoint referenced",V,same_speed_across_four_blocks,elapsed_midpoint_min,2.7,,8,0.5714285714285715,descriptive same-speed serial association; two maps per block
+retract_minimum_delta_V,"Retract minimum, endpoint referenced",V,within_block_palindrome_pair_means,speed_um_per_s,,1,4,0.39999999999999997,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+retract_minimum_delta_V,"Retract minimum, endpoint referenced",V,within_block_palindrome_pair_means,speed_um_per_s,,2,4,0.7999999999999999,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+retract_minimum_delta_V,"Retract minimum, endpoint referenced",V,within_block_palindrome_pair_means,speed_um_per_s,,3,4,0.7999999999999999,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+retract_minimum_delta_V,"Retract minimum, endpoint referenced",V,within_block_palindrome_pair_means,speed_um_per_s,,4,4,1.0,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+retract_minimum_travel_nm,Travel position of retract minimum,nm,all_32_maps,speed_um_per_s,,,32,0.09989914268739956,descriptive rank association; repeated sequential maps
+retract_minimum_travel_nm,Travel position of retract minimum,nm,all_32_maps,elapsed_midpoint_min,,,32,0.532624633431085,descriptive serial association; speed protocol is balanced but not randomized
+retract_minimum_travel_nm,Travel position of retract minimum,nm,same_speed_across_four_blocks,elapsed_midpoint_min,0.1,,8,0.4285714285714286,descriptive same-speed serial association; two maps per block
+retract_minimum_travel_nm,Travel position of retract minimum,nm,same_speed_across_four_blocks,elapsed_midpoint_min,0.3,,8,0.3571428571428572,descriptive same-speed serial association; two maps per block
+retract_minimum_travel_nm,Travel position of retract minimum,nm,same_speed_across_four_blocks,elapsed_midpoint_min,0.9,,8,0.9047619047619048,descriptive same-speed serial association; two maps per block
+retract_minimum_travel_nm,Travel position of retract minimum,nm,same_speed_across_four_blocks,elapsed_midpoint_min,2.7,,8,0.6904761904761906,descriptive same-speed serial association; two maps per block
+retract_minimum_travel_nm,Travel position of retract minimum,nm,within_block_palindrome_pair_means,speed_um_per_s,,1,4,-0.19999999999999998,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+retract_minimum_travel_nm,Travel position of retract minimum,nm,within_block_palindrome_pair_means,speed_um_per_s,,2,4,0.39999999999999997,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+retract_minimum_travel_nm,Travel position of retract minimum,nm,within_block_palindrome_pair_means,speed_um_per_s,,3,4,0.7999999999999999,four pair means; arithmetic early/late mean cancels only first-order symmetric drift
+retract_minimum_travel_nm,Travel position of retract minimum,nm,within_block_palindrome_pair_means,speed_um_per_s,,4,4,-0.19999999999999998,four pair means; arithmetic early/late mean cancels only first-order symmetric drift

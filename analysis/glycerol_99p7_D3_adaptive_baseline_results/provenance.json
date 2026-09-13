@@ -1,0 +1,141 @@
+{
+  "analysis": "speed_conditioned_dynamic_baseline_no_surface_force_fit",
+  "analysis_script": "analysis/analyze_12_09_26_997glycerol_adaptive_baseline.py",
+  "analysis_script_sha256": "673277c732a85e6550225284d3c8c80d317308cf3dd8c1bf1fdf598be1c6da4e",
+  "input_download_manifest": "raw/keeper_6e87fc8bc37b4a89aeda/download_manifest.json",
+  "input_download_manifest_sha256": "b2bbe234e419a0c5079595d81f46f9a4c9806e8eb67ed0724fb21643e36d5427",
+  "source_observational_script": "analysis/analyze_12_09_26_997glycerol_observational.py",
+  "source_observational_script_sha256": "9dc99bfbdde5bf9efdbc8bd5c5cc789b3dbe1eeaa3e063de293705ba098243fc",
+  "baseline_definition": "per-curve median raw vDeflection in a speed-specific settled in-motion window",
+  "selection": {
+    "candidate_start_nm": [
+      20.0,
+      25.0,
+      30.0,
+      35.0,
+      40.0,
+      45.0,
+      50.0,
+      55.0,
+      60.0,
+      65.0,
+      70.0,
+      75.0,
+      80.0,
+      85.0,
+      90.0,
+      95.0,
+      100.0,
+      105.0,
+      110.0,
+      115.0,
+      120.0,
+      125.0,
+      130.0,
+      135.0,
+      140.0,
+      145.0,
+      150.0,
+      155.0,
+      160.0,
+      165.0,
+      170.0,
+      175.0,
+      180.0
+    ],
+    "window_width_nm": 120.0,
+    "guard_width_nm": 20.0,
+    "training_blocks": [
+      1,
+      3
+    ],
+    "validation_blocks": [
+      2,
+      4
+    ],
+    "aggregation_unit": "pixel score -> map median -> median across maps",
+    "score": "abs(first-quarter minus last-quarter median) + 0.5*(pre-guard mismatch + post-guard mismatch) + 0.25*median absolute adjacent-bin difference",
+    "stable_selection_rule": "choose the centre of the contiguous candidate-start region containing the training minimum and within 1 percent of that minimum",
+    "selected_windows_nm": {
+      "0.1": [
+        35.0,
+        155.0
+      ],
+      "0.3": [
+        40.0,
+        160.0
+      ],
+      "0.9": [
+        70.0,
+        190.0
+      ],
+      "2.7": [
+        155.0,
+        275.0
+      ]
+    },
+    "stability_check": "leave one complete acquisition block out and reselect"
+  },
+  "operations": {
+    "binning": "direct 5 nm scanner-travel-bin medians; no interpolation",
+    "baseline_value": "raw-sample median inside selected physical window",
+    "subtraction": "constant only; no slope removal",
+    "force_conversion": "auxiliary only, prior D3 scale 21.8255761652 nN/V",
+    "retract": "not baseline-corrected",
+    "fits_performed": [],
+    "explicitly_not_performed": [
+      "linear baseline slope fit",
+      "contact or separation fit",
+      "hydrodynamic fit",
+      "PB or other surface-force fit",
+      "speed regression or zero-speed extrapolation",
+      "mechanism identification"
+    ]
+  },
+  "interpretation_boundary": "corrected values are increments relative to a moving dynamic plateau, not absolute or equilibrium force",
+  "integrity": {
+    "input_map_count": 32,
+    "decoded_approach_curves": 2048,
+    "input_files_sha256": {
+      "map-data-2026.09.12-15.05.27.700.jpk-force-map": "1da38a0279a12f5b2c22e97a4373ae336725f2afcd1ddf81b55da9a99cf7c0b8",
+      "map-data-2026.09.12-15.11.30.037.jpk-force-map": "7d9e9e85be570ee44bb180019204ac0a2c8eeeb222772a7a259a4dcebc8c98f2",
+      "map-data-2026.09.12-15.13.54.693.jpk-force-map": "69e76465a98b65fa11c97155d239ec97a69f2971f0636b7fc2975b9b094c7a5b",
+      "map-data-2026.09.12-15.15.21.190.jpk-force-map": "33377b6b8a341f743c61b5d55fbd3f893234e66e3b4395c695b33dc102e4d8e5",
+      "map-data-2026.09.12-15.16.54.635.jpk-force-map": "e824649094f5da2c55701da952e979cbac6e291777be1644a755fd165532abb4",
+      "map-data-2026.09.12-15.18.09.797.jpk-force-map": "30d6d36844e372bdc91f8e070ec987722a3552057a2546a68f33fdc04b93378d",
+      "map-data-2026.09.12-15.19.36.626.jpk-force-map": "d9c904da25c7fa8ccaac0c2c13cd4ade5abfa3c0192f78ee1e146570abd62742",
+      "map-data-2026.09.12-15.22.15.764.jpk-force-map": "e03c7d076e431eb24c5fff0f08bee32541713f21618415eeb3ecaefa1769c98e",
+      "map-data-2026.09.12-15.28.13.596.jpk-force-map": "b74f450707d9091e95ff9f3f98271a9c589cf2ddac7f1395ff6e26808582fb6c",
+      "map-data-2026.09.12-15.30.45.054.jpk-force-map": "90bd949a4f1371fcebb699b3f2b8db94bd6d3f653aab3edf2c8e35d90e6cd442",
+      "map-data-2026.09.12-15.32.03.517.jpk-force-map": "2fd533182205e0d66ed4fdffef05423c4ebc46144b3df72ad0ca5dbf9bf2526e",
+      "map-data-2026.09.12-15.33.10.264.jpk-force-map": "26a3156f0072023b616ec0a43d7244d04fbe69389a41ea136b8c2a9b16d2499e",
+      "map-data-2026.09.12-15.39.14.852.jpk-force-map": "cf928c485e067cf2dfa23cab059e27cb8aefcac2bcc33116cf2640f2e5e26433",
+      "map-data-2026.09.12-15.45.19.105.jpk-force-map": "5f6330178b6d0773f14818b757e949e36b75d89e1e6746195cd471b182e3e90d",
+      "map-data-2026.09.12-15.46.27.970.jpk-force-map": "8299ae152742a04ea4198ddd296c2147d000e0c65d0d8594d5471ab4a40a71c6",
+      "map-data-2026.09.12-15.47.59.314.jpk-force-map": "00fe52af082cc3f54c581f70e4bfd077b0a5a3445859bc40ed8b6f7f2928e8ba",
+      "map-data-2026.09.12-15.50.26.125.jpk-force-map": "2071ece4b46fadf876db587e57929b9b95b57805753521e3642a0015e4b25b1b",
+      "map-data-2026.09.12-15.52.06.579.jpk-force-map": "0028b5e76415191d2f948435321a94bb247cf8f816c74a7dfc46d997b201db26",
+      "map-data-2026.09.12-15.53.31.481.jpk-force-map": "bfb86388c5126bf6a4cc18681dede3cc7d02c15749ed5e8eda399ddc0dc77c5f",
+      "map-data-2026.09.12-15.59.37.465.jpk-force-map": "481f665a192f6cbd1bec486640ecda2e8a743655e2652bd2478916c031fbfef7",
+      "map-data-2026.09.12-16.02.09.306.jpk-force-map": "1d3fdcd9a1fcf9d5feaa273bdcb56c9aeffb234fb4691c36783f0e97c7804c59",
+      "map-data-2026.09.12-16.05.09.289.jpk-force-map": "d860ca57f96bd73c1a35575fa334d2edabdbb7a6ca6f6063001170abc4569bac",
+      "map-data-2026.09.12-16.11.08.194.jpk-force-map": "11b28becc74988ce5178b150dd903aa0d65ac1234a7c7c1ce17f44b1fb68a084",
+      "map-data-2026.09.12-16.12.04.675.jpk-force-map": "8c073a1e89d4717d7d04df5df677f7733700b1e64c2461e50674064d4ed7ebff",
+      "map-data-2026.09.12-16.13.33.010.jpk-force-map": "f0bb49207b86aa27a064d226c2ce85a3b7fb73a3e2cb0feb07bc57fdb4aaf582",
+      "map-data-2026.09.12-16.14.59.227.jpk-force-map": "a4fb93c4e5c702cd0ea6b8d1b1e8847f00981c058d670e7907be2b3b8e06be02",
+      "map-data-2026.09.12-16.21.01.539.jpk-force-map": "16e6fdd2dd1fa46c094fcc13a9d5187291835638cff465622d363dbdf77d96be",
+      "map-data-2026.09.12-16.23.29.925.jpk-force-map": "3e067dabac3a86dc3760b5fcec384ca4cf2812d8e517e74d71bdfce31d205dcc",
+      "map-data-2026.09.12-16.24.53.504.jpk-force-map": "8c925cdde9e09de77d545be125accb1805bcd68f701e12bcfe5520c2520f6fd4",
+      "map-data-2026.09.12-16.26.39.509.jpk-force-map": "f16a7c810046249f2c51921f321c50253939495cc0043622131e3a57fc7afd4a",
+      "map-data-2026.09.12-16.29.17.790.jpk-force-map": "16d8787092ad8e8a74f5a859ef4dafeddfca2983ac1f82a8b6e96d84966d55b0",
+      "map-data-2026.09.12-16.35.11.254.jpk-force-map": "b258b87009e9ba3eaf2be7d1e36d35dd8fda3144befc2aeb19dcbb1ed2675e03"
+    }
+  },
+  "software": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.4",
+    "matplotlib": "3.9.3"
+  },
+  "randomness": "none"
+}

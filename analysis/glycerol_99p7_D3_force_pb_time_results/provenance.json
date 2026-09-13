@@ -1,0 +1,33 @@
+{
+  "script": "analysis/plot_12_09_26_997glycerol_force_pb_time_series.py",
+  "input_dynamic_baseline_csv": "analysis/glycerol_99p7_D3_adaptive_baseline_results/curve_dynamic_baselines.csv",
+  "input_chronology_csv": "analysis/glycerol_99p7_D3_time_speed_results/map_time_speed_observables.csv",
+  "maps": 32,
+  "curves_per_map": 64,
+  "baseline_mode": "held-out-validated speed-conditioned physical-window constant median",
+  "contact_mode": "terminal 10 nm physical scanner-travel robust line and contact-coordinate median",
+  "batch_contact_invOLS_nm_per_V": 49.98441850908595,
+  "batch_contact_invOLS_aggregation": "median of 32 per-map accepted-contact medians",
+  "spring_constant_N_per_m": 0.2383668909630904,
+  "force_scale_nN_per_V": 11.914630436608768,
+  "old_D3_invOLS_rejected_for_this_batch_nm_per_V": 91.5629518721293,
+  "model": "nonlinear_pb_derjaguin",
+  "fit_range_nm": [
+    20.0,
+    250.0
+  ],
+  "probe_radius_m_assumed": 4.546848945303745e-06,
+  "temperature_C_assumed": 25.6,
+  "epsilon_r_assumed": 42.5,
+  "epsilon_r_reference": "https://doi.org/10.3390/ma11040650",
+  "hamaker_J_assumed": 2.4e-21,
+  "hydrodynamic_subtraction_applied": false,
+  "parameter_interpretation": "finite-speed model-conditioned apparent values, not identified equilibrium material parameters",
+  "software": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "matplotlib": "3.9.3"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "script": "analysis/analyze_12_09_26_997glycerol_decay_v0.py",
+  "input_force_csv": "analysis/glycerol_99p7_D3_force_pb_time_results/map_force_by_separation.csv",
+  "input_force_csv_sha256": "7196cb9bf7ba1551e800d3eeda489d93e772f123f1d41b90ccc7b765633bcb4d",
+  "input_chronology_csv": "analysis/glycerol_99p7_D3_time_speed_results/map_time_speed_observables.csv",
+  "input_chronology_csv_sha256": "d45f752ac007e4f96620d50766500f37d965fc91011b76933f10fc803025afdc",
+  "time_model": "per distance and speed: OLS F=a+b*elapsed_min on 8 maps; HC3 covariance",
+  "one_hour_decay_definition": "100*(F_fit(t=0)-F_fit(t=60min))/F_fit(t=0), t=0 first map midpoint",
+  "one_hour_decay_interval": "delta method using HC3 covariance and t critical value with n-2 degrees of freedom",
+  "speed_extrapolation_primary": "within each 8-map block, arithmetic symmetric pair means; OLS F=a+b*v on four speeds",
+  "speed_extrapolation_sensitivity": "repeat on 0.1, 0.3, 0.9 um/s only",
+  "statistical_unit_time_fit": "map",
+  "statistical_unit_speed_fit": "same-speed symmetric map-pair mean within block",
+  "claim_boundary": "descriptive linear trends and protocol-dependent apparent v=0 intercepts; not equilibrium identification",
+  "software": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "matplotlib": "3.9.3"
+  }
+}

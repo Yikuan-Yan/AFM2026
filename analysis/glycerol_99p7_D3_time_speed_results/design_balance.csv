@@ -1,0 +1,10 @@
+scope,block,speed_um_per_s,n_maps,spearman_rho_speed_vs_elapsed_time,elapsed_first_midpoint_min,elapsed_last_midpoint_min
+all_maps,,,32,0.0,0.0,87.16833333333334
+within_block_raw_map_order,1,,8,0.0,0.0,16.8032
+within_block_raw_map_order,2,,8,0.0,20.990547233333334,40.7520889
+within_block_raw_map_order,3,,8,0.0,42.610533333333336,64.25286666666666
+within_block_raw_map_order,4,,8,0.0,65.53098333333334,87.16833333333334
+same_speed_time_coverage,,0.1,8,,0.0,83.832825
+same_speed_time_coverage,,0.3,8,,4.264597233333333,79.42069723333334
+same_speed_time_coverage,,0.9,8,,6.086941666666666,77.06660833333333
+same_speed_time_coverage,,2.7,8,,7.334133333333333,87.16833333333334

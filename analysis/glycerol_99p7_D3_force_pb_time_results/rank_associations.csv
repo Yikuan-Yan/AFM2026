@@ -1,0 +1,7 @@
+observable,unit,n_maps,global_spearman_rho_speed,global_spearman_rho_elapsed_time,same_speed_time_rho_median,same_speed_time_rho_min,same_speed_time_rho_max,inference_boundary
+absolute_force_20nm,pN,32,0.9687189593929655,-0.19354838709677416,-0.7976190476190477,-0.9047619047619048,-0.6428571428571429,descriptive map-level association; sequential non-randomized acquisition
+absolute_force_50nm,pN,32,0.9687189593929655,-0.18108504398826977,-0.7976190476190477,-0.9761904761904763,-0.3333333333333334,descriptive map-level association; sequential non-randomized acquisition
+absolute_force_100nm,pN,32,0.9687189593929655,-0.1689882697947214,-0.9761904761904763,-0.9761904761904763,0.261904761904762,descriptive map-level association; sequential non-randomized acquisition
+absolute_force_200nm,pN,32,0.9202830114233174,-0.2129765395894428,-0.6904761904761905,-0.9047619047619048,0.1666666666666667,descriptive map-level association; sequential non-randomized acquisition
+apparent_debye_length,nm,31,0.9684540390779791,-0.0076612903225806465,-0.23809523809523814,-0.8095238095238096,0.28571428571428575,descriptive map-level association; sequential non-randomized acquisition
+apparent_surface_potential,mV,31,0.9684540390779791,-0.14233870967741935,-0.7976190476190477,-1.0,-0.5714285714285715,descriptive map-level association; sequential non-randomized acquisition

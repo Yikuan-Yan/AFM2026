@@ -9,3 +9,7 @@
 # Preserve the byte-level provenance of the 08 September derived package.
 /analysis/water_08_09_26_results/** -text whitespace=cr-at-eol
 /analysis/water_08_09_26_results/**/*.svg whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof
+
+# Preserve the byte-level provenance of the 12 September D3 derived packages.
+/analysis/glycerol_99p7_D3_*_results/** -text whitespace=cr-at-eol
+/analysis/glycerol_99p7_D3_*_results/**/*.svg whitespace=cr-at-eol,-blank-at-eol,-blank-at-eof

@@ -14,6 +14,8 @@ Reproducible analysis code, derived results, quality-control figures and experim
 - `analysis/plot_27_08_26_fixed_pixel_chronology.py`: chronological force-distance overlay and 20/50/100/200 nm force slices for one fixed physical 8×8 map position.
 - `analysis/download_08_09_26_keeper.py`, `analysis/analyze_08_09_26_fixed_pixel.py` and `analysis/assess_08_09_26_refresh.py`: verified acquisition of the 36-map water experiment, cantilever-2 force reconstruction, actual-time chronology and blind liquid-refresh candidate diagnostics.
 - `analysis/fit_08_09_26_water.py` and `analysis/compare_08_09_26_water_quality.py`: per-map nonlinear PB fits, parameter sensitivity and the within/between-group quality comparison for the same 08-09-26 experiment.
+- `analysis/download_12_09_26_keeper.py`, `analysis/analyze_12_09_26_997glycerol_observational.py`, `analysis/analyze_12_09_26_997glycerol_adaptive_baseline.py` and `analysis/analyze_12_09_26_997glycerol_time_speed.py`: verified acquisition, deliberately fit-free raw observation, held-out-map-validated speed-conditioned dynamic baseline, and map-level time/speed/palindrome analysis of the 32-map, 99.7 wt% glycerol D3 experiment.
+- `analysis/plot_12_09_26_997glycerol_force_pb_time_series.py` and `analysis/analyze_12_09_26_997glycerol_decay_v0.py`: physical-window contact reconstruction, requested absolute-force/PB time figures, same-speed linear decay, and blockwise palindrome-pair speed extrapolation for the same D3 experiment.
 - `analysis/plot_zero_wt_all_fd_curves.py`: all measured 0 wt% approach curves, split into three speed-highlight figures with pointwise median and interquartile range.
 - `analysis/analyze_zero_wt_distribution_separation.py`: spatial-block bootstrap, simultaneous confidence bands and exact functional sign-flip tests for the three 0 wt% maps.
 - `analysis/analyze_zero_wt_classical_distribution_tests.py`: paired t/Wilcoxon, marginal Welch/Mann-Whitney/KS and three-group repeated-measures tests for the same maps.
@@ -37,6 +39,11 @@ The current scientific interpretation and its limitations are documented in:
 - [`analysis/water_08_09_26_results/REPORT.md`](analysis/water_08_09_26_results/REPORT.md)
 - [`analysis/water_08_09_26_results/surface_fit/REPORT.md`](analysis/water_08_09_26_results/surface_fit/REPORT.md)
 - [`analysis/water_08_09_26_results/surface_fit/DATA_QUALITY_COMPARISON.md`](analysis/water_08_09_26_results/surface_fit/DATA_QUALITY_COMPARISON.md)
+- [`analysis/glycerol_99p7_D3_observational_results/REPORT.md`](analysis/glycerol_99p7_D3_observational_results/REPORT.md)
+- [`analysis/glycerol_99p7_D3_adaptive_baseline_results/REPORT.md`](analysis/glycerol_99p7_D3_adaptive_baseline_results/REPORT.md)
+- [`analysis/glycerol_99p7_D3_time_speed_results/REPORT.md`](analysis/glycerol_99p7_D3_time_speed_results/REPORT.md)
+- [`analysis/glycerol_99p7_D3_force_pb_time_results/REPORT.md`](analysis/glycerol_99p7_D3_force_pb_time_results/REPORT.md)
+- [`analysis/glycerol_99p7_D3_decay_v0_results/REPORT.md`](analysis/glycerol_99p7_D3_decay_v0_results/REPORT.md)
 - [`analysis/palindrome_27_08_26_full_results/REPORT.md`](analysis/palindrome_27_08_26_full_results/REPORT.md)
 - [`analysis/palindrome_27_08_26_distribution_results/REPORT.md`](analysis/palindrome_27_08_26_distribution_results/REPORT.md)
 - [`analysis/palindrome_27_08_26_pilot_results/REPORT.md`](analysis/palindrome_27_08_26_pilot_results/REPORT.md)
@@ -49,6 +56,10 @@ The current scientific interpretation and its limitations are documented in:
 - [`analysis/results/REPORT.md`](analysis/results/REPORT.md)
 
 The 08-09-26 water series contains 36 complete 8×8 maps. Its force reconstruction uses the user-corrected cantilever-2 `k = 0.2736 ± 0.0063 N/m` and the measured global water InvOLS of `81.9545 nm/V`; the headers incorrectly contain cantilever-3 stiffness. The latter 18 maps provide a usable near-field repulsive branch and pass the stated PB parameter screening. A separate common 25–250 nm diagnostic gives group medians of `lambda_D = 12.315 nm` and surface-potential magnitude `49.590 mV`, without a sustained trend across successive six-map groups. These are finite-speed, model-conditioned values, using the user-authorized `R = 4.54685 µm` and assumed `T = 25.6 °C`. Neither group constrains the two parameters reliably in the shared 80–250 nm tail, so the comparison does not quantify a true before/after change in Debye length or potential. The group-quality report preserves this distinction and the original primary fits.
+
+The 12-09-26 99.7 wt% glycerol D3 series contains 32 complete 8×8 maps in four rotated 8-map palindrome blocks at approach speeds `0.1/0.3/0.9/2.7 µm/s`; every retract is `1 µm/s`. Raw approach traces show a large speed-dependent motion-start transient and 100–300 nm scanner-travel plateau before the common terminal contact-like rise. The endpoint-referenced plateau also follows acquisition position within each serpentine line, while the absolute detector level drifts and resets during the run. Consequently the earlier first-20%-far-field and fixed-point contact-search assumptions are not transferable. The raw observational package performs no baseline or model fit. A separate dynamic-baseline analysis selects 120 nm physical-distance windows on blocks 1+3 and evaluates them on held-out blocks 2+4, yielding `35–155`, `40–160`, `70–190` and `155–275 nm` for increasing approach speed. Each curve then receives only a constant median subtraction. Map-level rank and palindrome analysis finds consistent positive speed ordering over approximately 237.5–417.5 nm scanner travel, including all four blocks at 320–360 and 380–420 nm, while same-speed signals generally decline with elapsed time. The terminal contact-like response reverses the speed ordering and retract minima become shallower with history. These are descriptive incremental associations, not fitted equilibrium force or identified hydrodynamic coefficients; retract is left uncorrected and prior-D3-scaled nN remains only a magnitude aid because embedded and prior D3 calibrations conflict.
+
+The later user-authorized force reconstruction estimates a batch contact InvOLS of `49.9844 nm/V` from terminal 10 nm physical windows and combines it with the independent D3 `k = 0.2383669 N/m`, giving `11.9146 nN/V`. At 20/50/100/200 nm, map-median absolute force has global speed Spearman correlations `0.969/0.969/0.969/0.920` and usually declines at fixed speed over the approximately 1.5 h sequence. Requested per-map PB projections are finite-speed apparent parameters: all `2.7 µm/s` optima are weak or unusable because they approach parameter/offset boundaries. Same-speed OLS gives mostly `8–16%` fitted decay over the first hour where the signal is resolved. Within each palindrome block, symmetric pair means give all-four-speed apparent `v=0` median forces of `739.9/264.4/83.7/36.6 pN` at 20/50/100/200 nm, but excluding `2.7 µm/s` lowers them to `556.0/176.7/35.6/9.2 pN`; all 16 single-block intercept HC3 95% intervals include zero. These fit-range-dependent intercepts are protocol diagnostics, not identified equilibrium surface forces.
 
 The future concentration range is 0–99.5 wt% glycerol. At 25.6 °C the Cheng viscosity estimate rises from `0.8806 mPa s` in water to `774.9 mPa s` at 99.5 wt%, so a fixed approach speed of 0.1 or 0.2 µm/s cannot make hydrodynamic drainage negligible across the range. The protocol records concentration-dependent `eta U` speed design, finite-distance zero-force semantics and the requirement that the reported 20–200 nm equilibrium force be obtained from a map/block/session-supported `U -> 0` intercept rather than from one finite-speed curve.
 
@@ -90,6 +101,17 @@ python -X utf8 analysis/analyze_08_09_26_fixed_pixel.py
 python -X utf8 analysis/assess_08_09_26_refresh.py
 python -X utf8 analysis/fit_08_09_26_water.py --workers 4
 python -X utf8 analysis/compare_08_09_26_water_quality.py
+```
+
+For the 12-09-26 99.7 wt% glycerol D3 package (the first four commands remain fit-free; the final two reproduce the later explicitly requested fits):
+
+```bash
+python -X utf8 analysis/download_12_09_26_keeper.py
+python -X utf8 analysis/analyze_12_09_26_997glycerol_observational.py
+python -X utf8 analysis/analyze_12_09_26_997glycerol_adaptive_baseline.py
+python -X utf8 analysis/analyze_12_09_26_997glycerol_time_speed.py
+python -X utf8 analysis/plot_12_09_26_997glycerol_force_pb_time_series.py
+python -X utf8 analysis/analyze_12_09_26_997glycerol_decay_v0.py
 ```
 
 Each result directory contains an `artifact_manifest.sha256` file for checking the primary committed derived artifacts. The supplemental 0 wt% analysis has its own `zero_wt_distribution_analysis_manifest.sha256` so it can be verified independently.
