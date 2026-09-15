@@ -1,0 +1,48 @@
+{
+  "script": "analysis/analyze_12_09_26_997glycerol_empirical_hyd_pb.py",
+  "inputs": {
+    "force_csv": "analysis/glycerol_99p7_D3_force_pb_time_results/map_force_by_separation.csv",
+    "force_csv_sha256": "7196cb9bf7ba1551e800d3eeda489d93e772f123f1d41b90ccc7b765633bcb4d",
+    "chronology_csv": "analysis/glycerol_99p7_D3_time_speed_results/map_time_speed_observables.csv",
+    "chronology_csv_sha256": "d45f752ac007e4f96620d50766500f37d965fc91011b76933f10fc803025afdc",
+    "original_pb_fit_csv": "analysis/glycerol_99p7_D3_force_pb_time_results/map_pb_apparent_fits.csv",
+    "original_pb_fit_csv_sha256": "9d9ad2d81f064a2dd2b3ee3fe5d7a6e575b2f04cca58de6718b948277112809f",
+    "hyd_pair_matrix_csv": "analysis/glycerol_99p7_D3_hydrodynamic_scaling_results/palindrome_pair_force_matrix.csv",
+    "hyd_pair_matrix_csv_sha256": "baf149d131f13503bac99e71894303ae3fe78cf10fa1fa9b74285aa223ef640b",
+    "hyd_interaction_fit_csv": "analysis/glycerol_99p7_D3_hydrodynamic_scaling_results/interaction_model_fits.csv",
+    "hyd_interaction_fit_csv_sha256": "0815f4145e2062473aa93956d322a791fd8195947c41a3025864f6d38c5baa86"
+  },
+  "primary_subtraction": {
+    "variant": "shared_empirical_20_200",
+    "full_corrected_curve_formula": "F_full_corrected=F_original-K*v**alpha/(D+D0)",
+    "pb_fit_input_formula": "F_pb_input=F_full_corrected+K*v**alpha/(250nm+D0)",
+    "reference_distance_nm": 250.0,
+    "parameter_scope": "shared across four palindrome blocks; fitted on double-centred 20-200 nm interaction",
+    "constant_gauge_transform": "the added 250 nm value is removed from the reported full-curve fit offset and cannot change lambda, potential, residuals, or R2",
+    "identification_boundary": "complete only conditional on the empirical formula; the data do not uniquely identify all hydrodynamic force"
+  },
+  "pb_refit": {
+    "implementation": "plot_12_09_26_997glycerol_force_pb_time_series.fit_map",
+    "model": "nonlinear_pb_derjaguin",
+    "fit_range_nm": [
+      20.0,
+      250.0
+    ],
+    "epsilon_r": 42.5,
+    "probe_radius_m": 4.546848945303745e-06,
+    "hamaker_J": 2.4e-21,
+    "temperature_C": 25.6,
+    "optimizer_starts": "unchanged four starts",
+    "quality_rules": "unchanged from original 12-09-26 force/PB analysis"
+  },
+  "parallel_workers": 4,
+  "postprocess_only": false,
+  "claim_boundary": "empirical-hyd-corrected apparent PB trends; not complete hydrodynamic removal or equilibrium parameter identification",
+  "software": {
+    "python": "3.13.5 (main, May  5 2026, 21:05:52) [GCC 14.2.0]",
+    "platform": "Linux-6.12.90+deb13.1-amd64-x86_64-with-glibc2.41",
+    "numpy": "2.2.4",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.1+dfsg1"
+  }
+}

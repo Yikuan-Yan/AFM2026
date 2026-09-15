@@ -1,0 +1,58 @@
+{
+  "script": "analysis/analyze_12_09_26_997glycerol_hydrodynamic_scaling.py",
+  "inputs": {
+    "force_csv": "analysis/glycerol_99p7_D3_force_pb_time_results/map_force_by_separation.csv",
+    "force_csv_sha256": "7196cb9bf7ba1551e800d3eeda489d93e772f123f1d41b90ccc7b765633bcb4d",
+    "chronology_csv": "analysis/glycerol_99p7_D3_time_speed_results/map_time_speed_observables.csv",
+    "chronology_csv_sha256": "d45f752ac007e4f96620d50766500f37d965fc91011b76933f10fc803025afdc",
+    "existing_pair_means_csv": "analysis/glycerol_99p7_D3_decay_v0_results/blockwise_speed_pair_means.csv",
+    "existing_pair_means_csv_sha256": "b1b1fc7ea79f6200ebd80f5bdc7429f422d5e2443ad2f59aed8bbc2a245d5c7b"
+  },
+  "data_contract": {
+    "statistical_replication": "four 8-map acquisition blocks",
+    "within_block_unit": "arithmetic mean of the two symmetric same-speed palindrome maps",
+    "distance_bins": "5 nm correlated curve coordinates; equal-weight shape samples, not independent replicates",
+    "primary_fit_range_nm": [
+      20.0,
+      200.0
+    ],
+    "speed_um_per_s": [
+      0.1,
+      0.3,
+      0.9,
+      2.7
+    ],
+    "speed_semantics": "nominal scanner speed, not reconstructed instantaneous gap-closing speed"
+  },
+  "interaction_definition": "double-centre each block distance-by-speed pair-mean force matrix to remove arbitrary A(D)+B(v)",
+  "block_reproducibility": {
+    "pairwise_shape_correlation_min": 0.9972181397122235,
+    "pairwise_shape_correlation_max": 0.9994026969770108,
+    "interpretation": "descriptive cross-block shape replication; no independent-bin p-value"
+  },
+  "classical_model": "I=K*(1/D-mean_D(1/D))*(v-mean_v(v))",
+  "empirical_model": "I=K*(1/(D+D0)-mean_D)*(v**alpha-mean_v)",
+  "bulk_reference": {
+    "viscosity_model": "Cheng glycerol-water mass-fraction correlation implemented in fit_glycerol_surface_forces.py",
+    "glycerol_mass_fraction": 0.997,
+    "temperature_C": 25.6,
+    "viscosity_mPa_s": 807.7711337064577,
+    "probe_radius_m": 4.546848945303745e-06,
+    "coefficient_pN_nm_per_um_s": 314782.4455707509
+  },
+  "self_checks": {
+    "synthetic_double_center_max_abs_error_pN": 3.694822225952521e-13,
+    "synthetic_classical_coefficient_relative_error": 0.0,
+    "double_center_row_mean_max_abs_pN": 1.1368683772161603e-13,
+    "double_center_column_mean_max_abs_pN": 1.997201203217579e-13,
+    "existing_pair_mean_closure_max_abs_pN": 0.0
+  },
+  "claim_boundary": "supports a reproducible velocity-distance interaction; does not identify hydrodynamics uniquely, validate nominal-speed no-slip v/D, infer viscosity, or infer slip length",
+  "software": {
+    "python": "3.13.5 (main, May  5 2026, 21:05:52) [GCC 14.2.0]",
+    "platform": "Linux-6.12.90+deb13.1-amd64-x86_64-with-glibc2.41",
+    "numpy": "2.2.4",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.1+dfsg1"
+  }
+}
