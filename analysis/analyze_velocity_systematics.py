@@ -142,8 +142,19 @@ def _branch_prefixes(
     return output
 
 
-def load_branch(path: Path, wanted_style: str) -> tuple[list[BranchCurve], int]:
-    """Decode one branch and normalize it to far-to-contact orientation."""
+def load_branch(
+    path: Path, wanted_style: str, minimum_points: int = 200
+) -> tuple[list[BranchCurve], int]:
+    """Decode one branch and normalize it to far-to-contact orientation.
+
+    ``minimum_points`` defaults to the historical analysis threshold.  A
+    caller performing acquisition QC can lower it to retain prematurely
+    terminated segments and classify them explicitly instead of losing their
+    point indices in the parser's skipped count.
+    """
+
+    if minimum_points < 1:
+        raise ValueError("minimum_points must be at least one")
 
     source_type = "map" if path.suffix == ".jpk-force-map" else "force"
     curves: list[BranchCurve] = []
@@ -189,7 +200,7 @@ def load_branch(path: Path, wanted_style: str) -> tuple[list[BranchCurve], int]:
                 )
                 if (
                     deflection.shape != measured_height.shape
-                    or deflection.size < 200
+                    or deflection.size < minimum_points
                     or not np.isfinite(duration)
                     or duration <= 0.0
                 ):
